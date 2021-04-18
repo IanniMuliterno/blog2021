@@ -1,3 +1,4 @@
+
 para utilizar o use_this primeiro foi necessário
 
 1 - instalar o git
@@ -6,6 +7,13 @@ para utilizar o use_this primeiro foi necessário
        $ git config --global user.<> (pressione tab no git bash)
 
 3 - abrir um rstudio zerado e rodar um create_project(<diretorio do projeto>)
+4 - rodar um use_git para fazer o primeiro commit
+
+caso queira disponibilizar no github é necessário gerar um token (se for o primeiro uso)
+aparentemente é possivel fazer isso direto pelo usethis, mas eu gerei no proprio site do github
+rodei gitcreds::gitcreds_set()
+ele pede o token
+gitcreds::gitcreds_get(use_cache = F) verifica que tudo correu bem
 
 
 
