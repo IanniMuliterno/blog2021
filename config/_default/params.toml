@@ -1,5 +1,5 @@
 
-title = "I'm Jane Doe"
+title = "Draft do meu blog"
 author = "Jane Doe"
 #copyright = "2020-2021"
 description = "Call me Jane"
@@ -9,7 +9,7 @@ favicon = "favicons/"
 # example ["css/custom.css"]
 customCss = []
 # example ["js/custom.js"]
-customJs = [] 
+customJs = []
 mainSections = ["post"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false

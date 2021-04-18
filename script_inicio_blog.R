@@ -4,3 +4,9 @@ library(blogdown)
 
 new_site("blog",theme = 'lxndrblz/anatole')
 stop_server()
+
+# memo importante :
+# posso mudar temas muito rapidamente apenas com
+#blogdown::install_theme(<nome do tema>)
+
+# em seguinda acessando config.yaml e setando o theme desejado
