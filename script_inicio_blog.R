@@ -14,3 +14,4 @@ stop_server()
 
 #site para consulta de comandos do site
 # https://gohugo.io/getting-started/usage/
+blogdown::build_site()
