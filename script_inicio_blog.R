@@ -10,3 +10,7 @@ stop_server()
 #blogdown::install_theme(<nome do tema>)
 
 # em seguinda acessando config.yaml e setando o theme desejado
+
+
+#site para consulta de comandos do site
+# https://gohugo.io/getting-started/usage/

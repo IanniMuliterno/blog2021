@@ -1,11 +1,12 @@
 baseURL: https://example.com
 languageCode: en
 DefaultContentLanguage: en
-title: Website of Jane Doe
+title: config yaml draft do meu blog
 theme: anatole
 summarylength: 10
 enableEmoji: yes
 enableRobotsTXT: yes
+publishDir: "docs/"
 pygmentsUseClasses: yes
 pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
