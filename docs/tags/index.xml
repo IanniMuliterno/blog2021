@@ -2,134 +2,134 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on My blog</title>
-    <link>https://iannimuliterno.github.io/tags/</link>
+    <link>https://iannimuliterno.github.io/blog2021/tags/</link>
     <description>Recent content in Tags on My blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Mar 2021 21:47:41 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Mar 2021 21:47:41 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>demo</title>
-      <link>https://iannimuliterno.github.io/tags/demo/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/demo/</link>
       <pubDate>Sat, 13 Mar 2021 21:47:41 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/demo/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/demo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shortcode</title>
-      <link>https://iannimuliterno.github.io/tags/shortcode/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/shortcode/</link>
       <pubDate>Sat, 13 Mar 2021 21:47:41 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/shortcode/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/shortcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plot</title>
-      <link>https://iannimuliterno.github.io/tags/plot/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/plot/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/plot/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>https://iannimuliterno.github.io/tags/r-markdown/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/r-markdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/r-markdown/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>https://iannimuliterno.github.io/tags/regression/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/regression/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/regression/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/regression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>https://iannimuliterno.github.io/tags/css/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/css/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/css/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>html</title>
-      <link>https://iannimuliterno.github.io/tags/html/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/html/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/html/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>https://iannimuliterno.github.io/tags/markdown/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/markdown/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/markdown/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>privacy</title>
-      <link>https://iannimuliterno.github.io/tags/privacy/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/privacy/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/privacy/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/privacy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shortcodes</title>
-      <link>https://iannimuliterno.github.io/tags/shortcodes/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/shortcodes/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/shortcodes/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/shortcodes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>text</title>
-      <link>https://iannimuliterno.github.io/tags/text/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/text/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/text/</guid>
       <description></description>
     </item>
     
     <item>
       <title>emoji</title>
-      <link>https://iannimuliterno.github.io/tags/emoji/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/emoji/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/emoji/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/emoji/</guid>
       <description></description>
     </item>
     
     <item>
       <title>thumbnail</title>
-      <link>https://iannimuliterno.github.io/tags/thumbnail/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/thumbnail/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/thumbnail/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/thumbnail/</guid>
       <description></description>
     </item>
     
     <item>
       <title>index</title>
-      <link>https://iannimuliterno.github.io/tags/index/</link>
+      <link>https://iannimuliterno.github.io/blog2021/tags/index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://iannimuliterno.github.io/tags/index/</guid>
+      <guid>https://iannimuliterno.github.io/blog2021/tags/index/</guid>
       <description></description>
     </item>
     
