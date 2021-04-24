@@ -14,4 +14,8 @@ stop_server()
 
 #site para consulta de comandos do site
 # https://gohugo.io/getting-started/usage/
+
+# lembrando que toda mudança feita demanda uma rodada de build_site para funcionar
 blogdown::build_site()
+
+#e também um commit e push para ficar ativo online
