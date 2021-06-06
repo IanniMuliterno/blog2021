@@ -2,6 +2,8 @@
 layout: post
 title: Cuidados para manipulação de scripts automáticos
 tags: [diário]
+author: Ianní Muliterno
+date: "2019-08-26"
 ---  
 ##
 

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="pt-br" data-theme=""><head>
+    <title> Ianní Muliterno | Cuidados para manipulação de scripts automáticos </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Call me Jane">
+    
+    
+    
+    <link rel="stylesheet"
+        href="/blog2021/css/style.min.7ec96a07e10b60a6997be730fc5d4d3467a225c68515a7df6ae17ac2500f828c.css"
+        integrity="sha256-fslqB&#43;ELYKaZe&#43;cw/F1NNGeiJcaFFaffauF6wlAPgow="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/blog2021/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/blog2021/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog2021/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog2021/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog2021/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/blog2021/pt-br/post/2019-08-26-cuidados-para-manipula%C3%A7%C3%A3o-de-scripts-automa%C3%A1ticos/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/blog2021/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/blog2021/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js"
+                integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://iannimuliterno.github.io/blog2021/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Cuidados para manipulação de scripts automáticos"/>
+<meta name="twitter:description" content="Este é o primeiro post do &lsquo;diário de bordo&rsquo;, posts com essa tag serão todos motivados por algo que me aconteceu enquanto navegava o oceano dos dados, algo que me levou a pensar &lsquo;caramba isso aqui vale um registro&rsquo;."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/blog2021/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">Meu blog</a></h3>
+            <div class="description">
+                <p>Call me Jane</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://de.linkedin.com/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/lxndrblz/anatole/" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.instagram.com/" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:iannimuliterno@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Ianní Muliterno  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/blog2021/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/about/"
+                        
+                   title="">Sobre</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/contact/"
+                        
+                   title="">Contato</a></li>
+        
+        
+            
+                <li><a href="/blog2021/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/blog2021/pt-br/"
+                       title="PT-BR">PT-BR</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Cuidados para manipulação de scripts automáticos</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                26/8/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">Tempo de leitura: 5 minutos</span>
+                    </div>
+                
+            </div>
+
+            <h2 id="heading"></h2>
+<p>Este é o primeiro post do &lsquo;diário de bordo&rsquo;, posts com essa tag serão todos motivados por algo que me aconteceu enquanto navegava o oceano dos dados, algo que me levou a pensar &lsquo;caramba isso aqui vale um registro&rsquo;. Dito isso, prossigamos.</p>
+<p>Em empresas de TI, é comum que certos processos entrem na rotina e precisem ser executados com frequência, então para se livrar da repetição manual, é interessante tornar o script automático. Em geral isso consiste em aceitar entradas dinâmicas, preparar warnings para alertar ocorrências estranhas entre outros cuidados e dá trabalho até que o script esteja realmente sem arestas, certo?! As vezes precisamos revisitar aquele belo e polido script, para acrescentar ou otimizar coisas e é claro, é necessário repetir o processo de aparar arestas, de modo que ele não quebre e te faça querer cometer atrocidades quando descobrir que aquele script que leva 12 horas para rodar e você iniciou no dia anterior, quebrou no meio da noite enquanto você estava dormindo e sonhando que iria ter o resultado no dia seguinte. No diário de hoje deixo uma nota para mim e a quem interessar, sobre algo que chamamos de &lsquo;smoke test&rsquo;, um teste que garante que sua manipulação não quebrou nada, para não esquecer o passo a passo necessário para polir com sucesso seu script.</p>
+<p>agosto/2019<br>
+objetivo : Manipular scripts automáticos<br>
+previsão do tempo : ensolarado (porém frio)<br>
+sensação térmica : 15°C</p>
+<ul>
+<li>
+<h4 id="passo-1">Passo 1</h4>
+</li>
+</ul>
+<p>Um script automático é como uma função gigante, certo?! Temos parâmetros de entrada que, no meu caso, sempre envolvem uma base de dados, então sempre deixe comentado o <em>path</em> de uma base teste, a menor possível para quando você for fazer sua rodada de teste apenas remover o comentário e rodar tudo sabendo que vai ter um teste efetivo e pronto o mais rápido possível, como no exemplo abaixo.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1">#----------------------------------------------------------------------</span>
+<span class="c1"># Argumentos</span>
+<span class="c1"># este comando permite que o script seja chamado por um bash, recebendo dele os argumentos setados (recomendo checar o help do commandArgs)</span>
+<span class="n">arg</span><span class="o">=</span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="n">dados_entrada</span> <span class="o">=</span> <span class="n">arg[1]</span>
+<span class="n">parametro2</span> <span class="o">=</span> <span class="n">arg[2]</span>
+<span class="n">path_saida</span> <span class="o">=</span> <span class="n">arg[3]</span>
+
+<span class="c1">#Este &#39;if&#39; é mais uma boa prática, caso o usuário cometa erros ao setar os argumentos, o script para na hora, e retorna um aviso.</span>
+<span class="c1">#O aviso abaixo orienta o usuario sobre quais argumentos usar e a ordem em que devem ser informados. É ativado quando o </span>
+<span class="c1">#usuário informa uma quantidade incorreta de argumentos. Algo simples, normalmente um script precisa de vários avisos e checkups. </span>
+<span class="nf">if </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">!=</span> <span class="m">3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">message</span><span class="p">(</span><span class="s">&#34;Os argumentos são: &lt;path_file_input&gt; &lt;parametro2&gt; &lt;path_saida&gt; \n O script assume entrada zipada&#34;</span><span class="p">)</span>
+  <span class="nf">quit</span><span class="p">()</span>
+<span class="p">}</span>
+
+
+<span class="c1"># argumentos para smoke test</span>
+<span class="c1"># dados_entrada = ~/minha_menor_base.csv</span>
+<span class="c1"># parametro2 = 2019</span>
+<span class="c1"># path_saida = &#34;~/output_teste/&#34;</span>
+
+</code></pre></div><ul>
+<li>
+<h4 id="passo-2">Passo 2</h4>
+</li>
+</ul>
+<p>Se você precisa automatizar um script, provavelmente é porque sua máquina não será a única que vai rodar ele e isso pede pelo menos 3 cuidados. O primeiro é em relação a versão, o ideal é que todas as máquinas estejam com a mesma versão do software utilizado e que esteja documentado a versão em que o script foi escrito. Problemas de versão podem dar mais dor de cabeça do que você espera.</p>
+<ul>
+<li>
+<h4 id="passo-3">Passo 3</h4>
+</li>
+</ul>
+<p>O segundo problema em rodar coisas em muitas máquinas diferentes é em relação a bibliotecas, neste caso vamos falar de um problema que considero muito trollador das galáxias. Quando eu testava um script, costumava limpar o environment e começar rodando do zero, obviamente uma boa prática, mas não suficiente. O ideal é reiniciar a sessão, o R tem a opção &ldquo;restart R session&rdquo;, se não houver um atalho desse tipo no seu software, basta fechar e abrir novamente. Por quê? Porque se você rodar uma biblioteca, ela continua carregada mesmo que o environment seja limpo e isso pode te fazer esquecer de declarar aquela biblioteca nova no início do script.</p>
+<p>Aliás, este problema está dentro do anterior, já que algumas bibliotecas rodam apenas em versões específicas.</p>
+<ul>
+<li>
+<h4 id="passo-4">Passo 4</h4>
+</li>
+</ul>
+<p>Terceiro cuidado para ter multiplas maquinas rodando seu script. Se o script usa paralelização em algum momento, tenha certeza de que o cálculo de cores utilizados será dinâmico, outras máquinas podem não ter a mesma quantidade de cores que a sua.</p>
+<ul>
+<li>
+<h4 id="passo-5">Passo 5</h4>
+</li>
+</ul>
+<p>Último ponto, o que vai sair do seu script? Seja a saída um modelo, imagens ou bases, é interessante que haja uma rotina no R que garanta que, caso o script esteja rodando pela segunda vez, sua saída já existente seja copiada para uma pasta auxiliar ( que eu costumo chamar de histórico) pois você pode precisar do seu resultado anterior. Abaixo, complemento o exemplo dado no passo um, com uma forma de fazer isso no R.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1">#----------------------------------------------------------------------</span>
+<span class="c1"># Argumentos</span>
+<span class="c1"># este comando permite que o script seja chamado por um bash, recebendo dele os argumentos setados (recomendo checar o help do commandArgs)</span>
+<span class="n">arg</span><span class="o">=</span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="n">dados_entrada</span> <span class="o">=</span> <span class="n">arg[1]</span>
+<span class="n">parametro2</span> <span class="o">=</span> <span class="n">arg[2]</span>
+<span class="n">path_saida</span> <span class="o">=</span> <span class="n">arg[3]</span>
+
+<span class="c1">#Este &#39;if&#39; é mais uma boa prática, caso o usuário cometa erros ao setar os argumentos, o script para na hora, e retorna um aviso.</span>
+<span class="c1">#O aviso abaixo orienta o usuario sobre quais argumentos usar e a ordem em que devem ser informados. É ativado quando o </span>
+<span class="c1">#usuário informa uma quantidade incorreta de argumentos. Algo simples, normalmente um script precisa de vários avisos e checkups. </span>
+<span class="nf">if </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">!=</span> <span class="m">3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">message</span><span class="p">(</span><span class="s">&#34;Os argumentos são: &lt;path_file_input&gt; &lt;parametro2&gt; &lt;path_saida&gt; \n O script assume entrada zipada&#34;</span><span class="p">)</span>
+  <span class="nf">quit</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1"># argumentos para smoke test</span>
+<span class="c1"># dados_entrada = ~/minha_menor_base.csv</span>
+<span class="c1"># parametro2 = 2019</span>
+<span class="c1"># path_saida = &#34;~/output_teste/&#34;</span>
+
+<span class="c1"># captura a data e hora em que a saida foi concluída.</span>
+<span class="n">mytime</span> <span class="o">&lt;-</span> <span class="nf">format</span><span class="p">(</span><span class="nf">Sys.time</span><span class="p">(),</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%Y_%m_%d_%H_%M_%S&#34;</span><span class="p">)</span>
+
+<span class="c1"># Essa linha sobrescreve o arquivo de saída sempre que é executada</span>
+<span class="nf">fwrite</span><span class="p">(</span><span class="n">arquivo_saida</span><span class="p">,</span><span class="nf">paste0</span><span class="p">(</span><span class="n">path_saida</span><span class="p">,</span><span class="s">&#34;saida&#34;</span><span class="p">,</span><span class="s">&#34;.txt&#34;</span><span class="p">))</span>
+
+<span class="c1"># Essa linha deixa o arquivo_saida salvo no diretorio &#39;historico&#39; informando a data em que ele foi gerado.</span>
+<span class="c1"># Como a variável &#39;mytime&#39; está sempre mudando, os arquivos no historico não serão sobrescritos</span>
+<span class="nf">fwrite</span><span class="p">(</span><span class="n">arquivo_saida</span><span class="p">,</span><span class="nf">paste0</span><span class="p">(</span><span class="n">path_saida</span><span class="p">,</span><span class="s">&#34;historico/saida_&#34;</span><span class="p">,</span><span class="n">mytime</span><span class="p">,</span><span class="s">&#34;.txt&#34;</span><span class="p">))</span>
+</code></pre></div><p>Essas foram minhas observações, por enquanto ter esses 5 passos em mente tem funcionado, mas <em>by all means</em> compartilhem boas práticas que vocês acham que deveriam estar citadas aqui.</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                <span class="separator"><a class="tag" href="/blog2021/pt-br/tags/di%C3%A1rio/">diário</a></span>
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/blog2021/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script></body>
+
+</html>

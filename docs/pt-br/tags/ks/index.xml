@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ks on Meu blog</title>
+    <link>https://iannimuliterno.github.io/blog2021/pt-br/tags/ks/</link>
+    <description>Recent content in ks on Meu blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/pt-br/tags/ks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A métrica KS</title>
+      <link>https://iannimuliterno.github.io/blog2021/pt-br/post/2020-05-03-m%C3%A9trica-ks/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/pt-br/post/2020-05-03-m%C3%A9trica-ks/</guid>
+      <description>Olá quarenteners, como tá seu recorde de séries maratonadas?
+Hoje passei, depois de muitos meses é verdade, para falar um pouco sobre uma métrica muito bem-quista para avaliar performance de modelos de classificação binária, a métrica KS.</description>
+    </item>
+    
+  </channel>
+</rss>

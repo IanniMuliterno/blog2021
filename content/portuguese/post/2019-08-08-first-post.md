@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Post experimental
-image: /img/hello_world.jpeg
+image: images/hello_world.jpeg
 tags: [comparação,modelagem,máxima_verossimilhança]
+author: Ianní Muliterno
+date: "2019-08-08"
 ---  
 
 Hello my friends, stay awhile and listen!  
