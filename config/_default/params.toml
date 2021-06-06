@@ -1,6 +1,6 @@
 
 title = "Draft do meu blog"
-author = "Jane Doe"
+author = "Ianní Muliterno"
 #copyright = "2020-2021"
 description = "Call me Jane"
 profilePicture = "images/profile.jpg"
@@ -56,4 +56,4 @@ url = "https://www.instagram.com/"
 [[socialIcons]]
 icon = "fas fa-envelope"
 title = "e-mail"
-url = "mailto:mail@example.com"
+url = "mailto:iannimuliterno@gmail.com"
