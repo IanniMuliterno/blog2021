@@ -17,3 +17,4 @@ gitcreds::gitcreds_get(use_cache = F) verifica que tudo correu bem
 
 
 
+5 - rodar usethis::use_github()
