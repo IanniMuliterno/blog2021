@@ -7,5 +7,5 @@ contentDir = "content/english"
 [pt-br]
 title = "Meu blog"
 weight = 2
-LanguageName = "pt-br"
+LanguageName = "PT-BR"
 contentDir = "content/portuguese"
