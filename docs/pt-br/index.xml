@@ -55,6 +55,15 @@ Primeiro post \o/. Esse é um tema no qual coincidentemente esbarrei enquanto ta
     </item>
     
     <item>
+      <title>About me</title>
+      <link>https://iannimuliterno.github.io/blog2021/pt-br/about/</link>
+      <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/pt-br/about/</guid>
+      <description>Meu nome é Ianní Muliterno, eu sou Estatística e meu objetivo aqui é registrar coisas que eu acho importante e/ou que preciso revisitar com certa frequência.</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://iannimuliterno.github.io/blog2021/pt-br/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
@@ -70,15 +79,6 @@ Primeiro post \o/. Esse é um tema no qual coincidentemente esbarrei enquanto ta
       
       <guid>https://iannimuliterno.github.io/blog2021/pt-br/contact/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>https://iannimuliterno.github.io/blog2021/pt-br/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://iannimuliterno.github.io/blog2021/pt-br/about/</guid>
-      <description>Meu nome é Ianní Muliterno, eu sou Estatística e meu objetivo aqui é registrar coisas que eu acho importante e/ou que preciso revisitar com certa frequência.</description>
     </item>
     
   </channel>
