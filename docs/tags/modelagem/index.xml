@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>modelagem on My blog</title>
+    <link>https://iannimuliterno.github.io/blog2021/tags/modelagem/</link>
+    <description>Recent content in modelagem on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/tags/modelagem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A métrica KS</title>
+      <link>https://iannimuliterno.github.io/blog2021/post/2020-05-03-m%C3%A9trica-ks/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/post/2020-05-03-m%C3%A9trica-ks/</guid>
+      <description>Olá quarenteners, como tá seu recorde de séries maratonadas?
+Hoje passei, depois de muitos meses é verdade, para falar um pouco sobre uma métrica muito bem-quista para avaliar performance de modelos de classificação binária, a métrica KS.</description>
+    </item>
+    
+    <item>
+      <title>Post experimental</title>
+      <link>https://iannimuliterno.github.io/blog2021/post/2019-08-08-first-post/</link>
+      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/post/2019-08-08-first-post/</guid>
+      <description>Hello my friends, stay awhile and listen!
+Primeiro post \o/. Esse é um tema no qual coincidentemente esbarrei enquanto também esbarrava no belo e amigável &amp;lsquo;beautiful-jekyll&amp;rsquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

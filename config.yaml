@@ -10,3 +10,8 @@ publishDir: "docs/"
 pygmentsUseClasses: yes
 pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

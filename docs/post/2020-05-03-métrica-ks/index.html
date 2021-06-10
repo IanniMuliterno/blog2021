@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> Ianní Muliterno | A métrica KS </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    
+    
+    <link rel="stylesheet"
+        href="/blog2021/css/style.min.7ec96a07e10b60a6997be730fc5d4d3467a225c68515a7df6ae17ac2500f828c.css"
+        integrity="sha256-fslqB&#43;ELYKaZe&#43;cw/F1NNGeiJcaFFaffauF6wlAPgow="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/blog2021/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/blog2021/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog2021/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog2021/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog2021/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/blog2021/post/2020-05-03-m%C3%A9trica-ks/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/blog2021/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/blog2021/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js"
+                integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://iannimuliterno.github.io/blog2021/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="A métrica KS"/>
+<meta name="twitter:description" content="Olá quarenteners, como tá seu recorde de séries maratonadas?
+Hoje passei, depois de muitos meses é verdade, para falar um pouco sobre uma métrica muito bem-quista para avaliar performance de modelos de classificação binária, a métrica KS."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/blog2021/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">My blog</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="www.linkedin.com/in/iannimuliterno" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/IanniMuliterno" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.instagram.com/" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:iannimuliterno@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Ianní Muliterno  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/blog2021/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>A métrica KS</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                3/5/2020
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">5-minute read</span>
+                    </div>
+                
+            </div>
+
+            <p>Olá quarenteners, como tá seu recorde de séries maratonadas?</p>
+<p>Hoje passei, depois de muitos meses é verdade, para falar um pouco sobre uma métrica muito bem-quista para avaliar performance de modelos de classificação binária, a métrica KS. O motivo é simples, dentre as métricas de modelo de classificação mais adotadas ( Acurácia, sensibilidade, F1, curva ROC) ela é a mais caixa preta, então vamos desvendar um pouco sobre ela. Vale avisar que para uma boa compreensão desse  post você precisa conhecer o básico sobre modelos de classificação, pois vamos apenas relembrar alguns conceitos e pôr a mão na massa.</p>
+<p>Antes de começar vamos relembrar o conceito de algumas métricas para justificar a importância da KS, essas métricas são: Taxa de Verdadeiro Positivo (TVP), Taxa de Verdadeiro Negativo (TVN), Taxa de Falso Positivo (TFP) e Taxa de Falso Negativo (TFN), considerando uma classificação binária onde 1 é positivo e 0 é negativo.</p>
+<ul>
+<li>
+<p><strong> TVP </strong>, é o quanto dos meus positivos são de fato classificados pelo modelo como positivos. <code>VP/(VP + FN)</code>, métrica conhecida como &lsquo;sensibilidade&rsquo;.</p>
+</li>
+<li>
+<p><strong> TVN </strong>, é o quanto dos meus negativos são de fato classificados pelo modelo como negativos. <code>VN/(VN + FP)</code>, métrica conhecida como &lsquo;especificidade&rsquo;.</p>
+</li>
+<li>
+<p><strong> TFP </strong>, é o quanto dos meus negativos são classificados como positivos pelo modelo. <code>FP/(FP + VN)</code>, métrica conhecida como Erro tipo I.</p>
+</li>
+<li>
+<p><strong> TVP </strong>, é o quanto dos meus positivos são classificados como negativos pelo modelo. <code>FN/(FN + VP)</code>, métrica conhecida como Erro tipo II.</p>
+</li>
+</ul>
+<p>Observe que essas métricas dão resultados específicos e se avaliadas separadamente, podem dar a falsa impressão de que temos um modelo bem ajustado, por exemplo, o modelo pode ter baixa TFP e alta TVP ao mesmo tempo, inclusive esse tipo de problema é comum quando a variável binária que queremos prever é desbalanceada, pois se o modelo não recebe informação suficiente sobre uma das classes ele provavelmente não vai saber diferenciá-la da classe concorrente.</p>
+<p>Agora sim é possível partir para a explicação do KS e entender porque é interessante aplicar.</p>
+<p>Essa métrica considera uma base de classificação binária e um modelo ajustado que retorne probabilidades da observação pertencer aos positivos. O teste KS oferece um resultado considerado mais completo, por avaliar a qualidade de diferenciação de classe que o modelo tem, vamos para o passo a passo para entender melhor o que isso quer dizer :</p>
+<ul>
+<li>
+<p>Rodar o modelo de classificação para obter as probabilidades das observações possuírem resposta positiva;</p>
+</li>
+<li>
+<p>Separar essas probabilidades de acordo com a classe;</p>
+</li>
+<li>
+<p>Calcular a função de distribuição acumulada empírica para cada um dos vetores de probabilidade;</p>
+</li>
+<li>
+<p>Obter o KS como a maior distância entre as duas acumuladas.</p>
+</li>
+</ul>
+<p>Para ilustrar o passo a passo vamos fazer isso manualmente e comparar com o resultado da função <code>ks.test</code>, para isso vamos criar uma base sintética de 1000 observações.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">library(tidyverse)
+set.seed(2020)
+
+label &lt;- base::sample(c(0,1),1000,prob = c(.3,.7),replace = T) %&gt;% as.factor()
+letras &lt;- base::sample(c(&#34;a&#34;,&#34;b&#34;,&#34;c&#34;),1000,prob = c(.3,.5,.2),replace = T)
+numers &lt;- rgamma(1000, shape = 2) + rnorm(1000,7)*as.numeric(label)
+
+
+modelo &lt;- glm(label ~ letras + numers^2, family = binomial())
+summary(modelo)
+
+preditos &lt;- ifelse(modelo$fitted.values &gt; .5,1,0)
+
+table(label,preditos)
+
+#          preditos
+# label     0   1
+# 
+#        0 254  29
+#        1  20 697
+</code></pre></div><p>No bloco acima fizemos o passo 1, geramos uma base sintética e ajustamos um modelo linear generalizado, em seguida consideramos probabilidades acima de 0.5 como positivo ( ou, predição = 1) e negativo caso contrário. Para ter uma noção do que esperar do resultado da KS, podemos dar uma olhada na matriz de confusão, que no código acima é plotada por <code>table(label,preditos)</code>. Observamos que tem muito mais VP e VN em relação aos FP e FN, então esperamos um valor alto da métrica KS. Sabendo disso, passamos para o &ldquo;cálculo manual&rdquo; da métrica.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># passo 2: separando as probabilidades atribuídas a cada classe
+
+positivos &lt;- modelo$fitted.values[label == 1]
+negativos &lt;- modelo$fitted.values[label == 0]
+
+#############################
+# passo 3 :
+
+# obtendo função de distribuição acumulada para as probabilidades da classe 1
+acum_positos &lt;- ecdf(positivos)
+
+# obtendo função de distribuição acumulada para as probabilidades da classe 0
+acum_negativos &lt;- ecdf(negativos)
+
+# passo 4 :
+
+# calculando a distância máxima entre as distribuições obtidas acima
+max(abs(acum_positos(seq(0,1,length.out = 1000)) - 
+acum_negativos(seq(0,1,length.out = 1000))))
+#0.8854424
+#############################
+</code></pre></div><p>A função <code>ecdf()</code> retorna a função de distribuição acumulada empírica, por isso que para obter os resultados da acumulada precisamos setar como entrada uma variável frequência, no nosso caso : <code>seq(0,1,length.out = 1000)</code>. A função <code>abs()</code> permite capturar a diferença em módulo, obtemos então a diferença máxima de 0.8854424. Agora podemos validar se esse é realmente o valor da métrica KS aplicando <code>positivos ; negativos</code> na função <code>ks.test</code> do R, função do pacote nativo stats que já nos retorna o valor final da métrica.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">KS &lt;- ks.test(positivos,negativos)$statistic
+KS
+#        D 
+# 0.8854424 
+</code></pre></div><p>Pretty! O valor bate, sabemos agora porque a métrica é interessante, e sabendo o que acontece nos bastidores temos segurança de que ela é confiável. Agora a título de curiosidade, existe uma outra forma de calcular a KS, talvez um método que faça mais sentido por partir das outras métricas mais simples que citamos, ao invés de partir de termos como &ldquo;função de distribuição acumulada empírica&rdquo; que pode não soar amigável para todo mundo. Esta versão alternativa do cálculo é através da diferença entre TVP e TFP, que vai depender do cutoff, que no nosso caso é 0.5.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># calculando TVP - TFP para vários cutoffs
+cutoff &lt;- seq(0,1,by = 0.001)
+TVP &lt;- TFP &lt;- numeric()
+
+for(i in 1:length(cutoff)){
+ 
+ preditos &lt;- ifelse(modelo$fitted.values &gt; cutoff[i],1,0)
+ 
+ store &lt;- data.frame(preditos, label)
+ 
+ VP &lt;- store %&gt;% summarise(sum((preditos == 1 &amp; label == 1))) %&gt;% as.numeric()
+ FN &lt;- store %&gt;% summarise(sum((preditos == 0 &amp; label == 1))) %&gt;% as.numeric()
+ FP &lt;- store %&gt;% summarise(sum((preditos == 1 &amp; label == 0))) %&gt;% as.numeric()
+ VN &lt;- store %&gt;% summarise(sum((preditos == 0 &amp; label == 0))) %&gt;% as.numeric()
+ 
+ TVP[i] &lt;- VP/(VP + FN)
+ TFP[i] &lt;- FP/(FP + VN)
+ 
+}
+
+# TVP - TFP no cutoff = 0.5
+
+TVP[which(cutoff == .5)] - TFP[which(cutoff == .5)]
+#[1] 0.8696325
+</code></pre></div><p>Essa forma de calcular a KS é um pouco mais grosseira, nos dando uma aproximação do resultado real <code>0.8696325</code>, mas é interessante por explicitar que a métrica KS relaciona outras duas, que levam em consideração o quão certo o modelo está classificando uma das classes ao mesmo tempo que leva em consideração o &ldquo;tamanho&rdquo; das classificações erradas.</p>
+<p>É isso, ficamos por aqui. Lavem as mãos, usem máscaras e até a próxima.</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/blog2021/categories/r/">R</a></span>
+                <span class="separator"><a class="tag" href="/blog2021/tags/modelagem/">modelagem</a><a class="tag" href="/blog2021/tags/classifica%C3%A7%C3%A3o/">classificação</a><a class="tag" href="/blog2021/tags/ks/">ks</a></span>
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                <h2>comments</h2>
+                <div id="commento"></div>
+<script defer src="https://commento.example.com/js/commento.js">
+</script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/blog2021/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script>
+<script async defer src="https://analytics.example.com/latest.js"></script>
+<noscript><img src="https://analytics.example.com/noscript.gif" alt=""/></noscript>
+
+</body>
+
+</html>

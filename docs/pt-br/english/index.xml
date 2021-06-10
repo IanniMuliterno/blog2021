@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>config yaml draft do meu blog</title>
+    <link>https://iannimuliterno.github.io/blog2021/pt-br/english/</link>
+    <description>Recent content on config yaml draft do meu blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/pt-br/english/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://iannimuliterno.github.io/blog2021/pt-br/english/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/pt-br/english/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://iannimuliterno.github.io/blog2021/pt-br/english/contact/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/pt-br/english/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://iannimuliterno.github.io/blog2021/pt-br/english/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/pt-br/english/about/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.</description>
+    </item>
+    
+  </channel>
+</rss>

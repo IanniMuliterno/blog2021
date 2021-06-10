@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>comparação on My blog</title>
+    <link>https://iannimuliterno.github.io/blog2021/tags/compara%C3%A7%C3%A3o/</link>
+    <description>Recent content in comparação on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 08 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/tags/compara%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Post experimental</title>
+      <link>https://iannimuliterno.github.io/blog2021/post/2019-08-08-first-post/</link>
+      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/post/2019-08-08-first-post/</guid>
+      <description>Hello my friends, stay awhile and listen!
+Primeiro post \o/. Esse é um tema no qual coincidentemente esbarrei enquanto também esbarrava no belo e amigável &amp;lsquo;beautiful-jekyll&amp;rsquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

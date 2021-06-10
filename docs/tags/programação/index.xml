@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programação on My blog</title>
+    <link>https://iannimuliterno.github.io/blog2021/tags/programa%C3%A7%C3%A3o/</link>
+    <description>Recent content in programação on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/tags/programa%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fast and furious - data.table is THE thing.</title>
+      <link>https://iannimuliterno.github.io/blog2021/post/2019-09-26-dt-luv/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/post/2019-09-26-dt-luv/</guid>
+      <description>Cientista de dados, aquele ser que pode ser imaginado como um super-geek por trás dos modelos solucionadores de mistérios.</description>
+    </item>
+    
+  </channel>
+</rss>

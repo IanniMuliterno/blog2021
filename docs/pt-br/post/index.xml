@@ -5,12 +5,11 @@
     <link>https://iannimuliterno.github.io/blog2021/pt-br/post/</link>
     <description>Recent content in Posts on Meu blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/pt-br/post/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://iannimuliterno.github.io/blog2021/pt-br/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A métrica KS</title>
       <link>https://iannimuliterno.github.io/blog2021/pt-br/post/2020-05-03-m%C3%A9trica-ks/</link>
-      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://iannimuliterno.github.io/blog2021/pt-br/post/2020-05-03-m%C3%A9trica-ks/</guid>
       <description>Olá quarenteners, como tá seu recorde de séries maratonadas?
@@ -18,40 +17,40 @@ Hoje passei, depois de muitos meses é verdade, para falar um pouco sobre uma m�
     </item>
     
     <item>
-      <title>SatRday - Minha primeira palestra.</title>
-      <link>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-12-17-satrday/</link>
-      <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-12-17-satrday/</guid>
-      <description>Sábado, 30 de novembro de 2019, aconteceu o primeiro SatRday São Paulo.</description>
-    </item>
-    
-    <item>
-      <title>Fast and furious - data.table is THE thing.</title>
-      <link>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-09-26-dt-luv/</link>
-      <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-09-26-dt-luv/</guid>
-      <description>Cientista de dados, aquele ser que pode ser imaginado como um super-geek por trás dos modelos solucionadores de mistérios.</description>
-    </item>
-    
-    <item>
       <title>Cuidados para manipulação de scripts automáticos</title>
       <link>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-08-26-cuidados-para-manipula%C3%A7%C3%A3o-de-scripts-automa%C3%A1ticos/</link>
-      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-08-26-cuidados-para-manipula%C3%A7%C3%A3o-de-scripts-automa%C3%A1ticos/</guid>
       <description>Este é o primeiro post do &amp;lsquo;diário de bordo&amp;rsquo;, posts com essa tag serão todos motivados por algo que me aconteceu enquanto navegava o oceano dos dados, algo que me levou a pensar &amp;lsquo;caramba isso aqui vale um registro&amp;rsquo;.</description>
     </item>
     
     <item>
+      <title>Fast and furious - data.table is THE thing.</title>
+      <link>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-09-26-dt-luv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-09-26-dt-luv/</guid>
+      <description>Cientista de dados, aquele ser que pode ser imaginado como um super-geek por trás dos modelos solucionadores de mistérios.</description>
+    </item>
+    
+    <item>
       <title>Post experimental</title>
       <link>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-08-08-first-post/</link>
-      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-08-08-first-post/</guid>
       <description>Hello my friends, stay awhile and listen!
 Primeiro post \o/. Esse é um tema no qual coincidentemente esbarrei enquanto também esbarrava no belo e amigável &amp;lsquo;beautiful-jekyll&amp;rsquo;.</description>
+    </item>
+    
+    <item>
+      <title>SatRday - Minha primeira palestra.</title>
+      <link>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-12-17-satrday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-12-17-satrday/</guid>
+      <description>Sábado, 30 de novembro de 2019, aconteceu o primeiro SatRday São Paulo.</description>
     </item>
     
   </channel>

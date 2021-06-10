@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://iannimuliterno.github.io/blog2021/pt-br/english/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://iannimuliterno.github.io/blog2021/pt-br/english/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://iannimuliterno.github.io/blog2021/pt-br/</loc>
-    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,121 +21,11 @@
                 href="https://iannimuliterno.github.io/blog2021/pt-br/"
                 />
   </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/post/2020-05-03-m%C3%A9trica-ks/</loc>
-    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/classifica%C3%A7%C3%A3o/</loc>
-    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/ks/</loc>
-    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/modelagem/</loc>
-    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/post/</loc>
-    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://iannimuliterno.github.io/blog2021/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://iannimuliterno.github.io/blog2021/pt-br/post/"
-                />
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/</loc>
-    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://iannimuliterno.github.io/blog2021/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://iannimuliterno.github.io/blog2021/pt-br/tags/"
-                />
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/comunidade/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/estat%C3%ADstica/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/r/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-12-17-satrday/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/efici%C3%AAncia/</loc>
-    <lastmod>2019-09-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-09-26-dt-luv/</loc>
-    <lastmod>2019-09-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/programa%C3%A7%C3%A3o/</loc>
-    <lastmod>2019-09-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/python/</loc>
-    <lastmod>2019-09-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-08-26-cuidados-para-manipula%C3%A7%C3%A3o-de-scripts-automa%C3%A1ticos/</loc>
-    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/di%C3%A1rio/</loc>
-    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/compara%C3%A7%C3%A3o/</loc>
-    <lastmod>2019-08-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/m%C3%A1xima_verossimilhan%C3%A7a/</loc>
-    <lastmod>2019-08-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/post/2019-08-08-first-post/</loc>
-    <lastmod>2019-08-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/about/</loc>
-    <lastmod>2019-07-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://iannimuliterno.github.io/blog2021/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://iannimuliterno.github.io/blog2021/pt-br/about/"
-                />
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://iannimuliterno.github.io/blog2021/archives/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://iannimuliterno.github.io/blog2021/pt-br/archives/"
-                />
-  </url><url>
-    <loc>https://iannimuliterno.github.io/blog2021/pt-br/contact/</loc>
+    <loc>https://iannimuliterno.github.io/blog2021/pt-br/english/contact/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://iannimuliterno.github.io/blog2021/contact/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://iannimuliterno.github.io/blog2021/pt-br/contact/"
-                />
+  </url><url>
+    <loc>https://iannimuliterno.github.io/blog2021/pt-br/english/about/</loc>
+    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://iannimuliterno.github.io/blog2021/pt-br/categories/</loc>
     <xhtml:link
@@ -141,6 +37,18 @@
                 rel="alternate"
                 hreflang="pt-br"
                 href="https://iannimuliterno.github.io/blog2021/pt-br/categories/"
+                />
+  </url><url>
+    <loc>https://iannimuliterno.github.io/blog2021/pt-br/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://iannimuliterno.github.io/blog2021/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://iannimuliterno.github.io/blog2021/pt-br/tags/"
                 />
   </url>
 </urlset>

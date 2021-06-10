@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> Ianní Muliterno | Fast and furious - data.table is THE thing. </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    
+    
+    <link rel="stylesheet"
+        href="/blog2021/css/style.min.7ec96a07e10b60a6997be730fc5d4d3467a225c68515a7df6ae17ac2500f828c.css"
+        integrity="sha256-fslqB&#43;ELYKaZe&#43;cw/F1NNGeiJcaFFaffauF6wlAPgow="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/blog2021/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/blog2021/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog2021/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog2021/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog2021/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/blog2021/post/2019-09-26-dt-luv/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/blog2021/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/blog2021/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js"
+                integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://iannimuliterno.github.io/blog2021/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Fast and furious - data.table is THE thing."/>
+<meta name="twitter:description" content="Cientista de dados, aquele ser que pode ser imaginado como um super-geek por trás dos modelos solucionadores de mistérios."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/blog2021/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">My blog</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="www.linkedin.com/in/iannimuliterno" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/IanniMuliterno" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.instagram.com/" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:iannimuliterno@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Ianní Muliterno  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/blog2021/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/blog2021/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Fast and furious - data.table is THE thing.</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                3/5/2020
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">8-minute read</span>
+                    </div>
+                
+            </div>
+
+            <p>Cientista de dados, aquele ser que pode ser imaginado como um super-geek por trás dos modelos solucionadores de mistérios. Bom isso acontece, mas o que pouca gente conta é que um bom pedaço do tempo desse profissional é investido em dataPrep, nada cool, costuma ser demorado e delicado, essa última parte quer dizer que &ldquo;não, não da para automatizar 100% do dataPrep, o ideal é sempre ter um humano se certificando de que tudo está bem&rdquo;. É inevitável analisar alguns histogramas, estudar dados faltantes, fazer filtros, agrupamentos e tudo o mais.</p>
+<p>É aí que entra o data.table. Ah, data.table! Essa belezinha simplesmente é o jeito mais legal de virar sua base de dados ao avesso de forma &ldquo;braçal&rdquo;, é uma biblioteca que permite ao usuário adotar uma &lsquo;linguagem&rsquo; de manipulção de base que é curta e, na grande maioria das vezes, bem mais rápida que a concorrência.</p>
+<p>Ok, ok, isso é fala de fã, admito. O que vou fazer aqui então é dar uma pequena demonstração de como um comando pode ser passado do aclamado dplyr para datatable de forma simples, uma vez que se entende a estrutura, e como isso faz diferença no desempenho do script. Para isso vamos começar construindo uma base de 20 milhões de linhas e 10 colunas.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">purrr</span><span class="p">)</span> <span class="c1"># For map() function</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">microbenchmark</span><span class="p">)</span> <span class="c1"># For benchmarking</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+
+<span class="n">dfs</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="m">2e7</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>
+
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123456</span><span class="p">)</span>
+<span class="n">myList</span> <span class="o">&lt;-</span> <span class="nf">map</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span>   <span class="c1">#amostra de 20kk de valores no range de 1:1e5, 10 vezes</span>
+             <span class="n">base</span><span class="o">::</span><span class="n">sample</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">1e5</span><span class="p">,</span>
+             <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+ <span class="nf">map</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span>  <span class="c1"># em cada posicao da lista, quebra o vetor em 10 e joga cada parte como coluna de uma matriz</span>
+     <span class="n">ncol</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span> <span class="o">%&gt;%</span>
+ <span class="nf">map</span><span class="p">(</span><span class="n">data.frame</span><span class="p">)</span>  <span class="c1"># transforma todas matrizes da lista em data.frames</span>
+ 
+ <span class="n">df3</span> <span class="o">&lt;-</span> <span class="n">data.table</span><span class="o">::</span><span class="nf">rbindlist</span><span class="p">(</span><span class="n">myList</span><span class="p">)</span> <span class="c1"># une as bases na lista</span>
+</code></pre></div><p>Antes de prosseguir, vamos dar uma olhada na base.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"> <span class="n">df3</span>
+            <span class="n">X1</span>    <span class="n">X2</span>    <span class="n">X3</span>    <span class="n">X4</span>    <span class="n">X5</span>    <span class="n">X6</span>    <span class="n">X7</span>    <span class="n">X8</span>    <span class="n">X9</span>   <span class="n">X10</span>
+      <span class="m">1</span><span class="o">:</span> <span class="m">87921</span> <span class="m">55793</span> <span class="m">81282</span> <span class="m">39316</span> <span class="m">43389</span> <span class="m">54449</span> <span class="m">60047</span> <span class="m">18947</span> <span class="m">21528</span> <span class="m">46857</span>
+      <span class="m">2</span><span class="o">:</span> <span class="m">78535</span> <span class="m">91446</span> <span class="m">36566</span> <span class="m">17892</span>  <span class="m">6147</span> <span class="m">33818</span> <span class="m">67607</span> <span class="m">22926</span> <span class="m">26595</span> <span class="m">30526</span>
+      <span class="m">3</span><span class="o">:</span>  <span class="m">6326</span> <span class="m">76229</span> <span class="m">60797</span> <span class="m">92675</span>  <span class="m">1069</span> <span class="m">23344</span> <span class="m">51051</span> <span class="m">30793</span> <span class="m">47039</span> <span class="m">52544</span>
+      <span class="m">4</span><span class="o">:</span> <span class="m">76518</span> <span class="m">66161</span> <span class="m">48164</span> <span class="m">35810</span> <span class="m">32729</span> <span class="m">87865</span> <span class="m">21972</span> <span class="m">73380</span> <span class="m">88603</span> <span class="m">11411</span>
+      <span class="m">5</span><span class="o">:</span> <span class="m">57728</span>  <span class="m">2418</span> <span class="m">17606</span> <span class="m">59877</span> <span class="m">72380</span> <span class="m">39148</span> <span class="m">85925</span>  <span class="m">4679</span>   <span class="m">824</span> <span class="m">28162</span>
+     <span class="o">---</span>                                                            
+<span class="m">19999996</span><span class="o">:</span> <span class="m">61381</span> <span class="m">43589</span> <span class="m">70131</span> <span class="m">41942</span> <span class="m">32774</span> <span class="m">19965</span>  <span class="m">4749</span> <span class="m">52238</span> <span class="m">50814</span> <span class="m">50884</span>
+<span class="m">19999997</span><span class="o">:</span> <span class="m">45927</span>  <span class="m">4094</span> <span class="m">38977</span> <span class="m">76729</span> <span class="m">90735</span> <span class="m">21795</span>  <span class="m">9222</span> <span class="m">63427</span> <span class="m">70221</span> <span class="m">26999</span>
+<span class="m">19999998</span><span class="o">:</span> <span class="m">99080</span> <span class="m">70908</span>  <span class="m">9367</span> <span class="m">14237</span> <span class="m">39944</span> <span class="m">77173</span> <span class="m">36196</span> <span class="m">95234</span> <span class="m">31328</span> <span class="m">47128</span>
+<span class="m">19999999</span><span class="o">:</span> <span class="m">60724</span> <span class="m">37080</span>  <span class="m">4661</span> <span class="m">49043</span> <span class="m">70521</span> <span class="m">87968</span> <span class="m">38904</span> <span class="m">10466</span> <span class="m">16827</span> <span class="m">46864</span>
+<span class="m">20000000</span><span class="o">:</span>  <span class="m">4670</span> <span class="m">63739</span> <span class="m">27229</span> <span class="m">73348</span> <span class="m">72747</span> <span class="m">21393</span> <span class="m">29047</span> <span class="m">91010</span> <span class="m">44935</span> <span class="m">96431</span>
+</code></pre></div><p>Agora suponha que estamos na fase de dataPrep desta base, tentando descobrir coisas sobre ela como : &quot; Qual o valor minimo de X3 agrupado por X1?&quot;. Vamos escrever isso em dplyr e datatable para entender como é simples traduzir de um para o outro.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># escrevendo em datatable </span>
+<span class="n">teste1</span> <span class="o">&lt;-</span> <span class="n">df3[</span><span class="p">,</span><span class="n">.(min_X3</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">X3</span><span class="p">)),</span><span class="n">.(X1</span><span class="p">)</span><span class="n">]</span><span class="nf">[order</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span><span class="n">]</span>
+
+<span class="c1"># escrevendo em dplyr</span>
+<span class="n">teste2</span> <span class="o">&lt;-</span> <span class="n">df3</span> <span class="o">%&gt;%</span> 
+         <span class="nf">group_by</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span> <span class="o">%&gt;%</span>
+         <span class="nf">summarize</span><span class="p">(</span><span class="n">min_X3</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">X3</span><span class="p">))</span>
+         
+<span class="c1"># conferindo se as saídas são iguais          </span>
+<span class="nf">all.equal</span><span class="p">(</span><span class="n">teste1</span><span class="p">,</span><span class="nf">as.data.table</span><span class="p">(</span><span class="n">teste2</span><span class="p">))</span>
+<span class="n">[1]</span> <span class="kc">TRUE</span>
+</code></pre></div><p>Detalhando o que acontece no código acima, partindo do entendimento de dplyr</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">output</span> <span class="o">&lt;-</span> <span class="n">data</span> <span class="o">%&gt;%</span>  <span class="c1"># primeiro passo: Fornecer a base a ser manipulada</span>
+          <span class="nf">group_by</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="o">%&gt;%</span>  <span class="c1"># segundo passo: informar variável de agrupamento</span>
+          <span class="nf">summarize</span><span class="p">(</span> <span class="n">var_label</span> <span class="o">=</span> <span class="nf">func</span><span class="p">(</span><span class="n">var2</span><span class="p">))</span> <span class="c1"># terceiro passo: aplicar função na variável de interesse, dando resultado por grupo.</span>
+
+<span class="c1"># A tradução para datatable pode ser confusa no princípio porque apesar de ter uma ordem cronológica, no datatable talvez essa ordem não seja tão intuitiva.</span>
+
+<span class="c1"># estrutura básica para operar com datatable</span>
+
+<span class="n">data[filtro</span><span class="p">,</span> <span class="n">.(summarize</span><span class="p">),</span> <span class="n">.(group_by</span><span class="p">)</span><span class="n">]</span> 
+
+<span class="c1"># para entender ideia de ordem no datatable temos que:</span>
+
+<span class="n">data[</span> <span class="n">filtro</span> <span class="n">passo</span> <span class="m">1</span><span class="p">,</span> <span class="n">.(summarize</span> <span class="n">passo</span> <span class="m">1</span><span class="p">),</span> <span class="n">.(group_by</span> <span class="n">passo</span> <span class="m">1</span><span class="p">)</span><span class="n">]</span>
+
+<span class="c1"># para ir ao passo 2 teríamos</span>
+
+<span class="n">data2</span> <span class="o">&lt;-</span> <span class="n">data[</span> <span class="n">filtro</span> <span class="n">passo</span> <span class="m">1</span><span class="p">,</span> <span class="n">.(summarize</span> <span class="n">passo</span> <span class="m">1</span><span class="p">),</span> <span class="n">.(group_by</span> <span class="n">passo</span> <span class="m">1</span><span class="p">)</span><span class="n">]</span>
+<span class="n">data2[</span> <span class="n">filtro</span> <span class="n">passo</span> <span class="m">2</span><span class="p">,</span> <span class="n">.(summarize</span> <span class="n">passo</span> <span class="m">2</span><span class="p">),</span> <span class="n">.(group_by</span> <span class="n">passo</span> <span class="m">2</span><span class="p">)</span><span class="n">]</span>
+
+<span class="c1"># mas a beleza do pacote é fazer com que você precise enderessar objetos o mínimo possível então da para escrever assim</span>
+
+<span class="n">output</span> <span class="o">&lt;-</span> <span class="n">data[</span> <span class="n">filtro</span> <span class="n">passo</span> <span class="m">1</span><span class="p">,</span> <span class="n">.(summarize</span> <span class="n">passo</span> <span class="m">1</span><span class="p">),</span> <span class="n">.(group_by</span> <span class="n">passo</span> <span class="m">1</span><span class="p">)</span><span class="n">][</span> <span class="n">filtro</span> <span class="n">passo</span> <span class="m">2</span><span class="p">,</span> <span class="n">.(summarize</span> <span class="n">passo</span> <span class="m">2</span><span class="p">),</span> <span class="n">.(group_by</span> <span class="n">passo</span> <span class="m">2</span><span class="p">)</span><span class="n">]</span> <span class="kc">...</span> <span class="n">[</span> <span class="n">filtro</span> <span class="n">passo</span> <span class="n">n</span><span class="p">,</span> <span class="n">.(summarize</span> <span class="n">passo</span> <span class="n">n</span><span class="p">),</span> <span class="n">.(group_by</span> <span class="n">passo</span> <span class="n">n</span><span class="p">)</span><span class="n">]</span>
+
+<span class="c1">#vale lembrar que é por conta da estrutura básica que quando declaramos teste1, precisamos começar com vírgula, para indicar que não queremos filtros no nosso cálculo.</span>
+<span class="c1">#Fora isso basta copiar o que você colocaria no &#39;summarize&#39; para o espaço após a primeira virgula e copiar o que você colocaria no &#39;group_by&#39; após a segunda vírgula.</span>
+
+</code></pre></div><p>Agora que já sabemos como gerar a mesma operação por grupo nos dois pacotes, vamos comparar o desempenho com microbenchmark, esta função executa uma expressão um dado número de vezes e conta o tempo gasto em cada iteração. Para esse caso, foram feitas 100 execuções de cada expressão.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">time_champs</span> <span class="o">&lt;-</span> <span class="nf">microbenchmark</span><span class="p">({</span>
+<span class="n">df3[</span><span class="p">,</span><span class="n">.(min_X3</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">X3</span><span class="p">)),</span><span class="n">.(X1</span><span class="p">)</span><span class="n">]</span><span class="nf">[order</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span><span class="n">]</span>
+<span class="p">},</span> <span class="n">times</span> <span class="o">=</span> <span class="m">100L</span><span class="p">)</span>
+
+<span class="n">time_nonchamps</span> <span class="o">&lt;-</span> <span class="nf">microbenchmark</span><span class="p">({</span>
+   <span class="n">df3</span> <span class="o">%&gt;%</span> 
+   <span class="nf">group_by</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span> <span class="o">%&gt;%</span>
+   <span class="nf">summarize</span><span class="p">(</span><span class="n">min_X3</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">X3</span><span class="p">))</span>
+   <span class="p">},</span> <span class="n">times</span> <span class="o">=</span> <span class="m">100L</span><span class="p">)</span>
+</code></pre></div><p><img src="https://raw.githubusercontent.com/IanniMuliterno/iannimuliterno.github.io/master/img/dplyr100.png" alt="hist1">
+<img src="https://raw.githubusercontent.com/IanniMuliterno/iannimuliterno.github.io/master/img/datatable100.png" alt="hist2"></p>
+<p>1 segundo com datatable e uma variação muito pequena desse tempo quando repetimos a ação várias vezes, já o dplyr leva de 2 à 4 segundos. A coisa fica pior para o dplyr se tivermos interesse num grupo maior e em mais resultados no summarize.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">time_champs2</span> <span class="o">&lt;-</span> <span class="nf">microbenchmark</span><span class="p">({</span>
+               <span class="n">df3[</span><span class="p">,</span><span class="n">.(min_X3</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">X3</span><span class="p">),</span>
+                      <span class="n">max_X3</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">X3</span><span class="p">)),</span><span class="n">.(X1</span><span class="p">,</span><span class="n">X2</span><span class="p">)</span><span class="n">]</span><span class="nf">[order</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span><span class="n">X2</span><span class="p">)</span><span class="n">]</span>
+<span class="p">},</span> <span class="n">times</span> <span class="o">=</span> <span class="m">10L</span><span class="p">)</span>
+
+<span class="n">time_nonchamps2</span> <span class="o">&lt;-</span> <span class="nf">microbenchmark</span><span class="p">({</span>
+                  <span class="n">df3</span> <span class="o">%&gt;%</span> 
+                      <span class="nf">group_by</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span><span class="n">X2</span><span class="p">)</span> <span class="o">%&gt;%</span>
+                      <span class="nf">summarize</span><span class="p">(</span><span class="n">min_X3</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">X3</span><span class="p">),</span>
+                                <span class="n">max_X3</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">X3</span><span class="p">))</span>
+<span class="p">},</span> <span class="n">times</span> <span class="o">=</span> <span class="m">10L</span><span class="p">)</span>
+</code></pre></div><p><img src="https://raw.githubusercontent.com/IanniMuliterno/iannimuliterno.github.io/master/img/dplyr10.png" alt="hist3">
+<img src="https://raw.githubusercontent.com/IanniMuliterno/iannimuliterno.github.io/master/img/datatable10.png" alt="hist4"></p>
+<p>Aqui o dplyr levou de 28 à 230 segundos, contra 5.5 à 5.7 segundos do datatable.</p>
+<p>Supondo que isso não seja suficiente para te convencer a dar uma chance ao datatable, vamos à um caso de join que tem uma solução muito eficaz e interessante em datatable.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">d1</span><span class="o">&lt;-</span><span class="nf">data.table</span><span class="p">(</span><span class="n">v1</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">,</span><span class="s">&#34;d&#34;</span><span class="p">,</span><span class="s">&#34;d&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;d&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">),</span>
+               <span class="n">v2</span><span class="o">=</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">12</span><span class="p">)),</span><span class="n">V3</span><span class="o">=</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="n">times</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+   <span class="n">v1</span> <span class="n">v2</span> <span class="n">V3</span>
+<span class="m">1</span><span class="o">:</span>  <span class="n">a</span>  <span class="m">1</span>  <span class="m">1</span>
+<span class="m">2</span><span class="o">:</span>  <span class="n">b</span>  <span class="m">2</span>  <span class="m">2</span>
+<span class="m">3</span><span class="o">:</span>  <span class="n">c</span>  <span class="m">3</span>  <span class="m">3</span>
+<span class="m">4</span><span class="o">:</span>  <span class="n">d</span>  <span class="m">4</span>  <span class="m">4</span>
+<span class="m">5</span><span class="o">:</span>  <span class="n">d</span>  <span class="m">5</span>  <span class="m">1</span>
+<span class="m">6</span><span class="o">:</span>  <span class="n">b</span>  <span class="m">6</span>  <span class="m">2</span>
+
+<span class="n">d2</span><span class="o">&lt;-</span><span class="nf">data.table</span><span class="p">(</span><span class="n">v1</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">,</span><span class="s">&#34;d&#34;</span><span class="p">),</span><span class="n">v3</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">4</span><span class="p">),</span><span class="n">v4</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;y&#34;</span><span class="p">,</span><span class="s">&#34;x&#34;</span><span class="p">,</span><span class="s">&#34;t&#34;</span><span class="p">,</span><span class="s">&#34;e&#34;</span><span class="p">))</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+   <span class="n">v1</span> <span class="n">v3</span> <span class="n">v4</span>
+<span class="m">1</span><span class="o">:</span>  <span class="n">a</span>  <span class="m">3</span>  <span class="n">y</span>
+<span class="m">2</span><span class="o">:</span>  <span class="n">b</span>  <span class="m">2</span>  <span class="n">x</span>
+<span class="m">3</span><span class="o">:</span>  <span class="n">c</span>  <span class="m">1</span>  <span class="n">t</span>
+<span class="m">4</span><span class="o">:</span>  <span class="n">d</span>  <span class="m">4</span>  <span class="n">e</span>
+</code></pre></div><p>O objetivo é colocar a informação da coluna v4 na base d1 para os casos onde os valores de v1 e v3 são equivalentes nas duas bases. No dplyr para resolver esse problema seria necessário usar um join, que copiaria d1 e ameaça explodir sua memória se d1 for grande. Com datatable, duas linhas resolvem o problema.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">setkey</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">V3</span><span class="p">)</span> 
+<span class="n">d1[d2</span><span class="p">,</span> <span class="n">v4</span> <span class="o">:=</span> <span class="n">v4][]</span>
+
+<span class="c1"># checando o resultado</span>
+    <span class="n">v1</span> <span class="n">v2</span> <span class="n">V3</span>   <span class="n">v4</span>
+ <span class="m">1</span><span class="o">:</span>  <span class="n">a</span>  <span class="m">1</span>  <span class="m">1</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+ <span class="m">2</span><span class="o">:</span>  <span class="n">a</span>  <span class="m">9</span>  <span class="m">1</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+ <span class="m">3</span><span class="o">:</span>  <span class="n">a</span>  <span class="m">7</span>  <span class="m">3</span>    <span class="n">y</span>
+ <span class="m">4</span><span class="o">:</span>  <span class="n">a</span> <span class="m">12</span>  <span class="m">4</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+ <span class="m">5</span><span class="o">:</span>  <span class="n">b</span>  <span class="m">2</span>  <span class="m">2</span>    <span class="n">x</span>
+ <span class="m">6</span><span class="o">:</span>  <span class="n">b</span>  <span class="m">6</span>  <span class="m">2</span>    <span class="n">x</span>
+ <span class="m">7</span><span class="o">:</span>  <span class="n">b</span> <span class="m">11</span>  <span class="m">3</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+ <span class="m">8</span><span class="o">:</span>  <span class="n">c</span>  <span class="m">3</span>  <span class="m">3</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+ <span class="m">9</span><span class="o">:</span>  <span class="n">c</span>  <span class="m">8</span>  <span class="m">4</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">10</span><span class="o">:</span>  <span class="n">d</span>  <span class="m">5</span>  <span class="m">1</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">11</span><span class="o">:</span>  <span class="n">d</span> <span class="m">10</span>  <span class="m">2</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">12</span><span class="o">:</span>  <span class="n">d</span>  <span class="m">4</span>  <span class="m">4</span>    <span class="n">e</span>
+</code></pre></div><p>Mágico, hein? Mas o que aconteceu?</p>
+<ul>
+<li>Primeiro indicamos as variáveis de d1 que serão consideradas chave.</li>
+<li>Em seguida temos d1[d2] que escrito dessa forma equivale a um right_join entre as bases utilizando as chaves definidas, mas ainda não é esse o objetivo, porque se o match não existir o que queremos ver em v4 é <code>NA</code>.</li>
+<li>:= equivale ao mutate e vai adicionar a coluna de acordo com a referência, sendo assim as linhas sem match serão <code>NA</code>.</li>
+<li>Por fim, o [] no final serve para printar o resultado.</li>
+</ul>
+<p>Fato curioso sobre este exemplo, é que ele é um caso real, que gerou <a href="https://stackoverflow.com/questions/26719940/how-to-merge-two-large-datasets-while-generate-new-column-with-different-repeat/26720434#26720434">&lsquo;pergunta no stackoverflow&rsquo;</a> uns anos atrás. A pessoa tinha uma base grande em mãos e já havia tentado loop, que se mostrou impraticável, depois partiu para <code>merge</code> e <code>sqldf</code> que não deram conta do problema.</p>
+<p>Vale ressaltar que o data.table é tudo isso sim, mas ele não é para big data, ele é um last resort, se ficar impraticável com data.table é porque tem que partir uma ferramenta específica para manipular big data.</p>
+<h2 id="últimas-considerações">Últimas considerações</h2>
+<ul>
+<li>
+<p>A inspiração principal para esse post veio quando eu comecei a perceber a frequência com que problemas do meu dia a dia, envolvendo manipulações pesadas, podiam ser resolvidos com datatable. Como inspiração secundária os créditos vão para <a href="https://rstudio-pubs-static.s3.amazonaws.com/406521_7fc7b6c1dc374e9b8860e15a699d8bb0.html">&lsquo;este post&rsquo;</a> onde eu descobri que o jeito mais eficaz de agregar bases numa lista é com <code>data.table::rbindlist</code>, além de pegar emprestado seu método de gerar aquela base enorme que uso no início, então créditos duplos a ele.</p>
+</li>
+<li>
+<p>Quer dar uma chance ao data.table, mas tá magoado com a sintaxe dele e/ou receoso de sair do dplyr que é tão organizado e intuitivo? <a href="https://atrebas.github.io/post/2019-03-03-datatable-dplyr/">&lsquo;Aqui&rsquo;</a> você encontra um de-para muito bem feito de ações importantes nas duas bibliotecas.</p>
+</li>
+<li>
+<p>Para interessados, o datatable está sendo implementado para Python, isso deixa bem bacana a transição de uma linguagem para outra pois sair de <code>dplyr</code> para <code>pandas</code> não é trivial, mas se você usa data.table, vai manipular bases nas duas linguagens sem estresse. Mais detalhes <a href="https://towardsdatascience.com/an-overview-of-pythons-datatable-package-5d3a97394ee9">&lsquo;aqui</a></p>
+</li>
+<li>
+<p>Por último, porém talvez o mais importante para quem foi seduzido pelo datatable, <a href="https://stackoverflow.com/questions/21435339/data-table-vs-dplyr-can-one-do-something-well-the-other-cant-or-does-poorly">&lsquo;neste post do stackoverflow&rsquo;</a> um camarada muito solícito faz uma análise detalhada da luta <code>data.table vs dplyr</code>, levando em consideração os pilares <code>velocidade</code>, <code>uso de memória</code>, <code>sintaxe</code> e <code>features</code>.</p>
+</li>
+</ul>
+<p>E aí, partiu usar data.table?!</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/blog2021/categories/r/">R</a></span>
+                <span class="separator"><a class="tag" href="/blog2021/tags/programa%C3%A7%C3%A3o/">programação</a><a class="tag" href="/blog2021/tags/efici%C3%AAncia/">eficiência</a><a class="tag" href="/blog2021/tags/r/">R</a><a class="tag" href="/blog2021/tags/python/">Python</a></span>
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                <h2>comments</h2>
+                <div id="commento"></div>
+<script defer src="https://commento.example.com/js/commento.js">
+</script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/blog2021/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script>
+<script async defer src="https://analytics.example.com/latest.js"></script>
+<noscript><img src="https://analytics.example.com/noscript.gif" alt=""/></noscript>
+
+</body>
+
+</html>
