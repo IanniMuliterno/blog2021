@@ -10,7 +10,7 @@ publishDir: "docs/"
 pygmentsUseClasses: yes
 pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
-disqusShortname: "annymuliterno"
+disqusShortname: annymuliterno
 
 markup:
   goldmark:
