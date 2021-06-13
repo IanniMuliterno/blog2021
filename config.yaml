@@ -10,7 +10,6 @@ publishDir: "docs/"
 pygmentsUseClasses: yes
 pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
-relativeurls: false
 disqusShortname: annymuliterno
 
 markup:
