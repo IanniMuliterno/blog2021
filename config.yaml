@@ -1,4 +1,4 @@
-baseURL: https://iannimuliterno.github.io/blog2021/
+baseURL: "https://iannimuliterno.github.io/blog2021/"
 languageCode: en
 DefaultContentLanguage: en
 title: config yaml draft do meu blog
@@ -10,6 +10,7 @@ publishDir: "docs/"
 pygmentsUseClasses: yes
 pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
+relativeurls: false
 disqusShortname: annymuliterno
 
 markup:
