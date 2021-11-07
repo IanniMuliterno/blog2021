@@ -17,5 +17,7 @@ stop_server()
 
 # lembrando que toda mudança feita demanda uma rodada de build_site para funcionar
 blogdown::build_site()
+# preview
 
+serve_site()
 #e também um commit e push para ficar ativo online

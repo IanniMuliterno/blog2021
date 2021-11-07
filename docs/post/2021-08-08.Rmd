@@ -6,9 +6,9 @@ categories: ["R"]
 tags: ["R","Estatística","comunidade"]
 ---  
 
-![The RStudio logo](https://www.rstudio.com/wp-content/uploads/2016/09/RStudio-Logo-Blue-Gray-250.png){.logo}
+//date: 2021-08-15
 
-  Olá, pessoa amável da internet. Com esta referência ao Ludoviajante eu inicio um post que está no forno há um tempo. Quero falar um pouco de outros conteúdos que enriquecem mais que as habilidades estatísticas, então concluí que seria uma boa resumir os livros que leio.
+  Olá, pessoa amável da internet. Com esta referência ao Ludoviajante, meu procrastinador favorito, eu inicio um post que está no forno há um tempo. Quero falar um pouco de outros conteúdos que enriquecem mais que as habilidades estatísticas, então concluí que seria uma boa resumir os livros que leio.
 
   Fiz leituras recentes que enriqueceram bastante minha rotina, e bom... Francamente, quem 
   diria que um livro que se chama "o andar do bêbado" teria potencial de se tornar objeto de estudo. A obra de Leonard Mlodinov é um show de storytelling e quero me certificar de que fixei o que li, então espere encontrar aqui um resumo com 'breaks' para comentários e demonstrações de alguns dos casos curiosos citados por Leonard.
