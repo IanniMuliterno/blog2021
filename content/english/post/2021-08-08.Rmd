@@ -8,68 +8,89 @@ tags: ["R","Estatística","comunidade"]
 
 ![The RStudio logo](https://www.rstudio.com/wp-content/uploads/2016/09/RStudio-Logo-Blue-Gray-250.png){.logo}
 
-  Fiz leituras recentes que enriqueceram bastante minha rotina, para usar um termo mais lúico e apaixonado : Sabe aquele livro que muda sua vida?
+  Olá, pessoa amável da internet. Com esta referência ao Ludoviajante eu inicio um post que está no forno há um tempo. Quero falar um pouco de outros conteúdos que enriquecem mais que as habilidades estatísticas, então concluí que seria uma boa resumir os livros que leio.
+
+  Fiz leituras recentes que enriqueceram bastante minha rotina, e bom... Francamente, quem 
+  diria que um livro que se chama "o andar do bêbado" teria potencial de se tornar objeto de estudo. A obra de Leonard Mlodinov é um show de storytelling e quero me certificar de que fixei o que li, então espere encontrar aqui um resumo com 'breaks' para comentários e demonstrações de alguns dos casos curiosos citados por Leonard.
   
-  Para mim esses livros foram Foco, por Daniel Goleman e O andar do bêbado, por Leonard Mlodinow. Hoje, resolvi falar sobre o segundo, porque foi uma aula para mim e quero me certificar de que entendi ele, então espere encontrar aqui um resumo com 'breaks' para comentários e demonstrações de alguns dos casos curiosos citados por Leonard.
+
+   Durante a graduação de estatistica, esse livro era citado como uma leitura quase que obrigatória, a missão dele parecia ser apresentar a estatística de maneira ludica, mas dizer que essa é a missão do livro deixa muita coisa de fora. Leonard usa exemplos e histórias cativantes para explicar conceitos de probabilidade e quando você acha que se trata de uma aula de exatas disfarçada ele te lembra que probabilidade e sorte são sinônimos, logo passa a focar um pouco mais na palavra sorte e os exemplos que ele usa levam o leitor à questões filosoficas. 
+
   
-  A primeira curiosidade que me fez abrir o R e simular foi:
+ No primeiro capítulo o autor faz uma série de perguntas e provocações que envolvem probabilidade. E apresenta dois casos que podem ser demonstrados aqui, o primeiro deles é a teoria de Goldman
+ 
+ Um bom exemplo matemático disso é dado, onde 10 pessoas lançam 10 moedas cada, sabemos que qualquer resultado será um feito de pura sorte, e que acertar várias vezes seguidas a mesma face da moeda seria impressionante, certo?! ainda assim essa simulação reforça a afirmação do livro de que existe aproximadamente 2/3 de chance de ao menos um desses 10 jogadores executar tal feito.
+ 
+```{r}
+library(tidyverse)
 
-::: from
-Yihui Xie  
-In the Middle of Nowhere  
-Omaha, NE 68022  
-Email: xie@yihui.name  
-Homepage: https://yihui.name
-:::
+dfs <- rep(10,10)
 
+set.seed(2021)
+myList <- list()
+for(i in 1:10000){
+myList[[i]] <- map(dfs,   
+              base::sample,
+              x = 0:1,
+              replace = TRUE) %>% #10 pessoas lançam 1 moeda 10 vezes (resultados das moedas são independentes, então o ato de lançar 1 moeda 10 vezes equivale ao ato de lançar 10 moedas 1 vez)
+ sapply(., function(y) sum(y)>= 8 | sum(y)<= 2 ) #se a pessoa tem pelo menos 8 caras ou coroas marcamos como true
+         
+  }
+    
 
-Hiring Manager  
-School of Ninja, Hacker's University  
-404 Not Found Road, Undefined 0x1234, NA
+#chances de pelo menos 1 acertar o minimo 8 de 10 vezes
 
-::: date
-December 32, 2018
-:::
+myList %>% 
+  map(function(y) data.frame(id = paste0("j",1:10),x1 = y)) %>% 
+  map(pivot_wider,names_from = id, values_from = x1) %>% 
+  data.table::rbindlist() %>% 
+  # checa se alguem ganhou numa rodada de 10 lançamentos 
+  mutate(alguem_ganhou = ifelse( rowSums(across(everything())) > 0,1,0) ) %>% 
+  pull(alguem_ganhou) %>% 
+  # probabilidade de que alguem, por acaso, acerte pelo menos 8 de 10 vezes,
+  # dado um problema com 2 opções de resposta e dado que
+  # os participantes escolhem as respostas aleatoriamente.
+  mean()
 
-Dear Hiring Manager,
+#proporcao de vezes onde 1 jogador especifico acertou o minimo de 8 vezes.
 
-It is my honor and pleasure to write a letter of recommendation^[Is this the first letter that contains GIFs ever in the history of human?] for Dr. Emi Tanaka, a great hacker in my eyes.
+myList %>% 
+  map(function(y) data.frame(id = paste0("j",1:10),x1 = y)) %>% 
+  data.table::rbindlist() %>%
+  group_by(id) %>% 
+  summarise(vitorias = mean(x1))
+```
+ 
+  Usando probabilidade para provar o mesmo ponto. Consideramos  a função de distribuição binomial $f(x) = \binom{n}{k}p^kq^{n-k}$ se 10 moedas comuns $(p = q = 1/2)$ são jogadas, qual a chance de que 8 ou mais resultados sejam caras ou coroas? a resposta é obtida através de 
+  $$
+  \begin{equation}
+  
+  \sum_{i=8}^{10}\binom{10}{i}(1/2)^{10} + \sum_{i=0}^{2}\binom{10}{i}(1/2)^{10} &=& \\
+  2*\left[ \sum_{i=8}^{10}\binom{10}{i}(1/2)^{10} \right] &=& 0,1094
+  
+  \end{equation}
+  $$
+ Este número entra como parâmetro $p$ de uma outra binomial, onde calculamos a probabilidade de pelo menos 1 dos 10 jogadores conseguir este resultado. 
+ 
+ $$
+ \begin{equation}
+ 1 - \binom{10}{0}0,1094^0*0,8906^{10} = 0,6860
+ \end{equation}
+ $$
+ 
+ Interpretando o evento como *1 - probabilidade de que ninguém obtenha o resultado proposto* chegamos à $0,6860$.
+ 
+ Depois de nos lembrar como o acaso pode ser impressionante, Edward traz um exemplo da vida real, a história dos rebatedores Roger Maris e Mickey Mantle. O primeiro nunca havia rebatido mais de 40 home runs em uma temporada (um ano), já o segundo era favorito para quebrar o recorde de 60 home runs, porém o que acontece é que Maris acaba quebrando esse recorde em 1961. Para calcular a chance deste inesperado evento acontecer, Mlodinov cria um modelo de *acerto de home runs*, utilizando o raciocínio que acabamos de ver com os lançadores de moedas, porém desta vez não temos uma moeda com $p = 1/2$ e sim um rebatedor, então precisamos de um novo $p$, que represente a capacidade de Maris de rebater home runs. Foi considerada a média anual de home runs nos 4 melhores anos do Maris : $p = \frac{1}{14,7}$, então se cada rebatida de Maris é uma chance de home run, o parâmetro $n$ desta binomial é a quantidade de rebatidas de Maris em 1961. Não consegui este número, então precisei acreditar nas palavras de Leonard, que em sua simulação observou que Maris conseguia quebrar o recorde em 1 a cada 32 temporadas.
+ 
+ Ainda que 1/32 não pareça grande coisa quando nossa pergunta é "podemos apostar neste único jogador durante esta única temporada?``, um exemplo mais complexo pode mostrar o poder do acaso neste cenário. Se observarmos todos os jogadores com desempenho parecido com o de Maris ao longo do período em que o recorde foi setado até a era dos anabolizantes, que melhoram a capacidade dos jogadores e impossibilita uma comparação, teremos um período de 70 anos. Nesse meio tempo, é esperado que algum jogador que habitualmente acerte algo em torno de 40 home runs tenha um pico de 60 ou mais home runs na temporada, e seja aclamado como herói da temporada mesmo que nunca mais consiga um feito semelhante novamente, mesmo que este evento se comprove ser um fenômeno semelhante ao “estalido ocasional que ouvimos em meio a estática numa ligação telefônica ruim”, sim... Isso pode acontecer totalmente por acaso.
 
-Emi said [it was heck of a praise](https://twitter.com/statsgen/status/1023118510745038848) when I said Earo was a very impressive hacker. Well, the fact is that I have been actually impressed many more times by Emi, which is probably because Earo is a relatively low-key hacker, and I have seen a lot of cool things Emi posted on Twitter this year. If I were to write a full letter about them, it would probably take me two whole days. Below is a one-hour attempt to show the many ways in which she can be so cool.
+Para fechar o olhar sobre o capítulo 1, seguem 2 passagens que me cativaram :
 
-![The kunoichi theme for xaringan, made by Emi](https://github.com/emitanaka/ninja-theme/raw/master/docs/images/kunoichi-showcase.gif)
+- “Quando examinamos feitos extraordinários, devemos ter em mente que eventos extraordinários podem ocorrer sem causas extraordinárias.”
 
-- She added the [ninja themes to **xaringan**](https://github.com/yihui/xaringan/pull/165).
+ 
+- "Há um amplo fosso de aleatoriedade e incerteza entre a criação de algo e seu sucesso. É por isso que as pessoas bem sucedidas em todas as áreas quase sempre fazem parte de um certo conjunto - o conjunto das pessoas que não desistem."
 
-- [The **anicon** package](https://twitter.com/statsgen/status/1021683550171496449) to insert animated icons or images or [text](https://twitter.com/statsgen/status/1010323499901075456) in R Markdown / **xaringan** / Shiny.
+E foi assim que fui fascinado pelo primeiríssimo capítulo de *O andar do bêbado*. Faltou apenas saber como o cristão contou as oportunidade de home run numa temporada.
 
-- [The **datalegreyar** package](https://twitter.com/statsgen/status/1018823773162618882) that uses a special typeface to represent data directly with text (which is an even smarter idea than sparklines). Magic.
-
-- [She discovered the ultimate secret](https://twitter.com/statsgen/status/1012664098616590336) of the "Infinite Moon Reader" in **xaringan**: when an HTML page is automatically refreshed, the scroll position is preserved. This is extremely helpful when the document is long or has many pages, because otherwise you will have to scroll like crazy to the position where you last viewed. This feature is quite subtle and has been there for almost two years, and Emi was the first person (to my knowledge) who had discovered it and been excited about it.
-
-- Obviously she is very good at hacking with CSS. [Look at her **xaringan** slides](https://twitter.com/statsgen/status/1009591310150299648) with the shiny (I mean sparkling) r-ladies theme, and the content is pretty good, too!
-
-- [The joy over FiraCode](https://twitter.com/statsgen/status/993662737099079680) (as it was supported in RStudio).
-
-- She wrote [one of the bestest **blogdown** tutorials](https://twitter.com/statsgen/status/993003327074926592) (the level of details is amazing).
-
-- And [people truly appreciated](https://twitter.com/certifiedwaif/status/1029640487399915520) her **blogdown** seminar.
-
-- Her website is one of the most beautiful websites I have seen. In particular, [everyone loved her showcase.](https://twitter.com/statsgen/status/990422351593406464) Did I mention that it was actually one of the four websites I highlighted [in the R Markdown book](https://bookdown.org/yihui/rmarkdown/basics-examples.html)?
-
-- [The shiny custom loader.](https://twitter.com/statsgen/status/972727676459872256) Hahaha. [Super fun](https://twitter.com/statsgen/status/975321139550478336), and magic.
-
-- [She can teach statistics courses.](https://twitter.com/statsgen/status/1001293550531694592) I barely remember what linear mixed models are.
-
-- And [she just started answering](https://stackoverflow.com/a/51575804/559676) #rstats questions on Stack Overflow the other day! Thank you!!
-
-Creative, enthusiastic, excellent taste of design, with great attention to details. That is my overall impression of this hacker.^[This letter was originally published in my blog at https://yihui.name/en/2018/07/emi-tanaka/.]
-
-![The hacker's way of parking](https://slides.yihui.name/gif/impossible-parking.gif)
-
-![Yihui's signature](https://user-images.githubusercontent.com/163582/47831497-c6656c00-dd5e-11e8-87b3-1f03fa97baa0.png)  
-Yihui Xie  
-Software Engineer  
-RStudio, PBC
-
-<script src="https://yihui.name/js/center-img.js"></script>
+É isto! Nos vemos no próximo capítulo.
