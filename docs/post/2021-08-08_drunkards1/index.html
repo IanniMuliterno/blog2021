@@ -169,10 +169,10 @@
 
             <p>Olá, pessoa amável da internet. Com esta referência ao Ludoviajante, meu procrastinador favorito, eu inicio um post que está no forno há um tempo. Quero falar um pouco de outros conteúdos que enriquecem mais que as habilidades estatísticas, então concluí que seria uma boa resumir os livros que leio.</p>
 <p>Fiz leituras recentes que enriqueceram bastante minha rotina, e bom&hellip; Francamente, quem
-diria que um livro que se chama &ldquo;o andar do bêbado&rdquo; teria potencial de se tornar objeto de estudo. A obra de Leonard Mlodinov é um show de storytelling e quero me certificar de que fixei o que li, então espere encontrar aqui um resumo com &lsquo;breaks&rsquo; para comentários e demonstrações de alguns dos casos curiosos citados por Leonard.</p>
+diria que um livro que se chama &ldquo;o andar do bêbado&rdquo; teria potencial de se tornar objeto de estudo. A obra de Leonard Mlodinov é um show de storytelling e quero me certificar de que fixei o que li, então espere encontrar aqui um resumo com &lsquo;breaks&rsquo; para comentários e demonstrações de alguns dos casos curiosos citados por Leonard. Isto significa que não vou resumir tudo num único post, mas não fuja, prometo evoluir minhas habilidades de síntese a cada post.</p>
 <p>Durante a graduação de estatistica, esse livro era citado como uma leitura quase que obrigatória, a missão dele parecia ser apresentar a estatística de maneira ludica, mas dizer que essa é a missão do livro deixa muita coisa de fora. Leonard usa exemplos e histórias cativantes para explicar conceitos de probabilidade e quando você acha que se trata de uma aula de exatas disfarçada ele te lembra que probabilidade e sorte são sinônimos, logo passa a focar um pouco mais na palavra sorte e os exemplos que ele usa levam o leitor à questões filosoficas.</p>
-<p>No primeiro capítulo o autor faz uma série de perguntas e provocações que envolvem probabilidade. E apresenta dois casos que podem ser demonstrados aqui, o primeiro deles é a teoria de Goldman</p>
-<p>Um bom exemplo matemático disso é dado, onde 10 pessoas lançam 10 moedas cada, sabemos que qualquer resultado será um feito de pura sorte, e que acertar várias vezes seguidas a mesma face da moeda seria impressionante, certo?! ainda assim essa simulação reforça a afirmação do livro de que existe aproximadamente 2/3 de chance de ao menos um desses 10 jogadores executar tal feito.</p>
+<p>No primeiro capítulo o autor traz uma série de perguntas e provocações através de casos que envolvem a teoria do roteirista e romancista Goldman: “Se eu tivesse dito sim a todos os projetos que recusei, e não a todos os que aceitei, a coisa teria funcionado mais ou menos da mesma maneira.”</p>
+<p>Um bom exemplo matemático disso é dado: onde 10 pessoas lançam 10 moedas cada, sabemos que qualquer resultado será um feito de pura sorte, e que acertar várias vezes seguidas a mesma face da moeda seria impressionante, certo?! ainda assim essa simulação reforça a afirmação do livro de que existe aproximadamente 2/3 de chance de ao menos um desses 10 jogadores executar tal feito. Usando simulação para demonstrar esta afirmação, temos :</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">library(tidyverse)
 
 dfs &lt;- rep(10,10)
@@ -210,22 +210,22 @@ myList %&gt;%
   data.table::rbindlist() %&gt;%
   group_by(id) %&gt;% 
   summarise(vitorias = mean(x1))
-</code></pre></div><p>Usando probabilidade para provar o mesmo ponto. Consideramos  a função de distribuição binomial $f(x) = \binom{n}{k}p^kq^{n-k}$ se 10 moedas comuns $(p = q = 1/2)$ são jogadas, qual a chance de que 8 ou mais resultados sejam caras ou coroas? a resposta é obtida através de
+</code></pre></div><p>Usando probabilidade para provar o mesmo ponto, consideramos  a função de distribuição binomial <code>$f(x) = \binom{n}{k}p^kq^{n-k}$</code>. Se 10 moedas comuns <code>$(p = q = 1/2)$</code> são jogadas, qual a chance de que 8 ou mais resultados sejam caras ou coroas? a resposta é obtida através de
 $$
-\begin{equation}</p>
-<p>\sum_{i=8}^{10}\binom{10}{i}(1/2)^{10} + \sum_{i=0}^{2}\binom{10}{i}(1/2)^{10} &amp;=&amp; \<br>
-2*\left[ \sum_{i=8}^{10}\binom{10}{i}(1/2)^{10} \right] &amp;=&amp; 0,1094</p>
-<p>\end{equation}
+\begin{equation}
+\sum_{i=8}^{10}\binom{10}{i}(1/2)^{10} + \sum_{i=0}^{2}\binom{10}{i}(1/2)^{10} = \<br>
+2*\left[ \sum_{i=8}^{10}\binom{10}{i}(1/2)^{10} \right] = 0,1094
+\end{equation}
 $$
-Este número entra como parâmetro $p$ de uma outra binomial, onde calculamos a probabilidade de pelo menos 1 dos 10 jogadores conseguir este resultado.</p>
+Este número entra como parâmetro <code>$p$</code> de uma outra binomial, onde calculamos a probabilidade de pelo menos 1 dos 10 jogadores conseguir este resultado.</p>
 <p>$$
 \begin{equation}
 1 - \binom{10}{0}0,1094^0*0,8906^{10} = 0,6860
 \end{equation}
 $$</p>
-<p>Interpretando o evento como <em>1 - probabilidade de que ninguém obtenha o resultado proposto</em> chegamos à $0,6860$.</p>
-<p>Depois de nos lembrar como o acaso pode ser impressionante, Edward traz um exemplo da vida real, a história dos rebatedores Roger Maris e Mickey Mantle. O primeiro nunca havia rebatido mais de 40 home runs em uma temporada (um ano), já o segundo era favorito para quebrar o recorde de 60 home runs, porém o que acontece é que Maris acaba quebrando esse recorde em 1961. Para calcular a chance deste inesperado evento acontecer, Mlodinov cria um modelo de <em>acerto de home runs</em>, utilizando o raciocínio que acabamos de ver com os lançadores de moedas, porém desta vez não temos uma moeda com $p = 1/2$ e sim um rebatedor, então precisamos de um novo $p$, que represente a capacidade de Maris de rebater home runs. Foi considerada a média anual de home runs nos 4 melhores anos do Maris : $p = \frac{1}{14,7}$, então se cada rebatida de Maris é uma chance de home run, o parâmetro $n$ desta binomial é a quantidade de rebatidas de Maris em 1961. Não consegui este número, então precisei acreditar nas palavras de Leonard, que em sua simulação observou que Maris conseguia quebrar o recorde em 1 a cada 32 temporadas.</p>
-<p>Ainda que 1/32 não pareça grande coisa quando nossa pergunta é &ldquo;podemos apostar neste único jogador durante esta única temporada?``, um exemplo mais complexo pode mostrar o poder do acaso neste cenário. Se observarmos todos os jogadores com desempenho parecido com o de Maris ao longo do período em que o recorde foi setado até a era dos anabolizantes, que melhoram a capacidade dos jogadores e impossibilita uma comparação, teremos um período de 70 anos. Nesse meio tempo, é esperado que algum jogador que habitualmente acerte algo em torno de 40 home runs tenha um pico de 60 ou mais home runs na temporada, e seja aclamado como herói da temporada mesmo que nunca mais consiga um feito semelhante novamente, mesmo que este evento se comprove ser um fenômeno semelhante ao “estalido ocasional que ouvimos em meio a estática numa ligação telefônica ruim”, sim&hellip; Isso pode acontecer totalmente por acaso.</p>
+<p>Interpretando o evento como <em>1 - probabilidade de que ninguém obtenha o resultado proposto</em> chegamos à <code>$0,6860$</code>.</p>
+<p>Depois de nos lembrar como o acaso pode ser impressionante, Edward traz um exemplo da vida real, a história dos rebatedores Roger Maris e Mickey Mantle. O primeiro nunca havia rebatido mais de 40 home runs em uma temporada (um ano), já o segundo era favorito para quebrar o recorde de 60 home runs, porém o que acontece é que Maris acaba quebrando esse recorde em 1961. Para calcular a chance deste inesperado evento acontecer, Mlodinov cria um modelo de <em>acerto de home runs</em>, utilizando o raciocínio que acabamos de ver com os lançadores de moedas, porém desta vez não temos uma moeda com <code>$p = 1/2$</code> e sim um rebatedor, então precisamos de um novo <code>$p$</code>, que represente a capacidade de Maris de rebater home runs. Foi considerada a média anual de home runs nos 4 melhores anos do Maris : <code>$p = \frac{1}{14,7}$</code>, então se cada rebatida de Maris é uma chance de home run, o parâmetro <code>$n$</code> desta binomial é a quantidade de rebatidas de Maris em 1961. Não consegui este número, então precisei acreditar nas palavras de Leonard, que em sua simulação observou que Maris conseguia quebrar o recorde em 1 a cada 32 temporadas.</p>
+<p>Ainda que 1/32 não pareça grande coisa quando nossa pergunta é &ldquo;podemos apostar neste único jogador durante esta única temporada?&rdquo;, um exemplo mais complexo pode mostrar o poder do acaso neste cenário. Se observarmos todos os jogadores com desempenho parecido com o de Maris ao longo do período em que o recorde foi setado até a era dos anabolizantes, que melhoram a capacidade dos jogadores e impossibilita uma comparação, teremos um período de 70 anos. Nesse meio tempo, é esperado que algum jogador que habitualmente acerte algo em torno de 40 home runs tenha um pico de 60 ou mais home runs na temporada, e seja aclamado como herói da temporada mesmo que nunca mais consiga um feito semelhante novamente, mesmo que este evento se comprove ser um fenômeno semelhante ao “estalido ocasional que ouvimos em meio a estática numa ligação telefônica ruim”, sim&hellip; Isso pode acontecer totalmente por acaso.</p>
 <p>Para fechar o olhar sobre o capítulo 1, seguem 2 passagens que me cativaram :</p>
 <ul>
 <li>
@@ -237,6 +237,7 @@ $$</p>
 </ul>
 <p>E foi assim que fui fascinado pelo primeiríssimo capítulo de <em>O andar do bêbado</em>. Faltou apenas saber como o cristão contou as oportunidade de home run numa temporada.</p>
 <p>É isto! Nos vemos no próximo capítulo.</p>
+<p>Observação aos entusiastas de probabilidade que estão lendo : Revisando este post, percebi que pode haver uma falha importante. Leonard não especifica que, enquanto no modelo de lançamento de moedas calculamos a probabilidade considerando como sucesso caras ou coroas, no modelo de home runs só existe 1 sucesso, o que mudaria um pouco a conta&hellip; Precisamos saber como ele contou as oportunidades de home run para checar se ele fez esta consideração, então se você sabe como fazer isso, não me deixe morrer com essa curiosidade.</p>
 </div>
         <div class="post-footer">
             <div class="info">
@@ -282,6 +283,12 @@ $$</p>
 <script src="/blog2021/js/math-code.js"></script>
 <script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
+
+<script src="//yihui.org/js/math-code.js"></script>
+
+<script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 <script async defer src="https://analytics.example.com/latest.js"></script>
 <noscript><img src="https://analytics.example.com/noscript.gif" alt=""/></noscript>
