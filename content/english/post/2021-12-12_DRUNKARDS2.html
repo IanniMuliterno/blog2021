@@ -1,0 +1,45 @@
+---
+title: "Resumo de livro - O andar do bêbado (pt 2)"
+author: "Ianní Muliterno"
+date: 2021-12-12
+categories: ["R"]
+tags: ["R","Estatística","comunidade"]
+
+---  
+
+<script src="/blog2021/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Hello again, dando continuidade ao resumo do andar do bêbado, vamos aos capítulos 2 e 3. Onde o autor passa mais tempo falando de casos reais bem interessantes.</p>
+<p>Em “as leis das verdades e das meias verdades”, é evidenciado como lembrar de conceitos básicos de probabilidade pode evitar erros que o “senso comum” nos leva a cometer. Uma aplicação bem fundamental que vale ressaltar é o julgamento da probabilidade de um fenômeno. Normalmente quando alguém nos descreve uma situação, quanto mais detalhes temos mais nos convencemos que aquela situação pode acontecer, ou seja, somos levados a esquecer um conceito básico de probabilidade : um evento isolado sempre será mais ou igualmente provável que a interseção deste evento com algum outro. Por exemplo, é mais provavel que alguém com gripado:</p>
+<ul>
+<li>1 está espirrando muito,</li>
+<li>ou 2 que além disso apresente febre?</li>
+</ul>
+<p>A resposta é 1. Isso continua sendo verdade mesmo que recebamos algumas informações sobre a pessoa que, do nosso ponto de vista, se correlacionem com algum desses fatos. Uma forma fácil de lembrar e entender isto é conhecer a seguinte regra, sejam <span class="math inline">\(P_a\)</span> e <span class="math inline">\(P_b\)</span> as probabilidades de 2 eventos independentes, então a probabilidade de que os eventos ocorram juntos é <span class="math inline">\(P_a*P_b\)</span> e como estamos falando de valores entre 0 e 1, então certamente o resultado desta multiplicação será sempre menor que o <span class="math inline">\(P\)</span> do evento isolado.</p>
+<p>Leonard da exemplos mais perspicazes, envolvendo momentos em que estatística foi usada como argumento num tribunal, para defender ou acusar alguém. Mas sem spoilers disto, vamos apenas checar uma demonstração da afirmação acima.</p>
+<pre class="r"><code>a &lt;- b &lt;- seq(0.01,1,by=0.01)
+
+summary(a)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.0100  0.2575  0.5050  0.5050  0.7525  1.0000</code></pre>
+<pre class="r"><code>data.frame(a) %&gt;%
+ full_join(data.frame(b),by = character()) %&gt;% 
+#realiza produto de varias probs 2 a 2
+ mutate(prod = a*b) %&gt;% 
+#checa se o resultado do prod é menor que as probs isoladas  
+ mutate(check = prod &lt;= a &amp; prod &lt;= b) %&gt;% 
+ pull(check) %&gt;% 
+ all()</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>Outro exemplo curioso mostra o <em>viés da disponibilidade</em>. O que é maior, o número de palavras de seis letras na língua inglesa que tem <em>n</em> como quinta letra, ou o número de palavras de seis letras na língua inglesa que terminam com <em>ing</em> ? A maioria das pessoas escolheria a segunda opção, porém se pensarmos um pouco, percebemos que o grupo de palavras de seis letras que tem <em>n</em> como quinta letra, inclui todas as palavras de seis letras que terminam com <em>ing</em> e outras mais, porém como é mais fácil pensar em palavras que terminam com ing como casos de palavras que atendam essa condição, corremos o risco de nos deixar enganar.</p>
+<p>Com exemplos como estes entramos e saímos do capítulo 2. Em seguida é apresentado como começou a análise de processos incertos, introduzindo Cardano e chamando de “lei do espaço amostral” a sua visão de funcionamento do acaso. O poder dessa lei é exemplificado através do paradoxo de monty hall, onde um jogador escolhe 1 dentre 3 portas, tentando adivinhar qual delas esconde um prêmio. Mas existe uma pegadinha, o apresentador abre uma porta, que não tem o prêmio e antes de abrir a última porta não escolhida ele dá a chance do jogador mudar de opinião. É melhor mudar? vejamos</p>
+<p><img src="/blog2021/english/post/2021-12-12_DRUNKARDS2_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>“ O problema de Monty Hall é difícil de entender porque, a menos que pensemos nele com muito cuidado, o papel do apresentador acaba não sendo notado. Mas o apresentador está interferindo no jogo. Essa interferência fica mais evidente se supusermos que, em vez de 3 portas, temos 100. Ainda escolhemos a porta 1, mas agora temos uma probabilidade de 1 /100 de estar certos. Por outro lado, a chance de que o Maserati esteja atrás de uma das outras portas é de 99 /100. Como antes, o apresentador abre as portas que não escolhemos, deixando apenas uma e se assegurando de não abrir a porta que esconde o Maserati. Quando ele termina, a chance de que o Maserati esteja atrás da porta que escolhemos inicialmente ainda é de 1 /100, e a de que esteja atrás de uma das outras portas ainda é de 99 /100. Mas agora, graças à intervenção do apresentador, resta apenas uma porta, que representa todas as outras 99, e assim, a probabilidade de que o Maserati esteja atrás dela é de 99 /100! “</p>
+<p>É evidenciado que o foco de Cardano eram os jogos do azar e foi estudando esse mundo que ele conseguiu fazer contribuições ao estudo da probabilidade ( o livro dos jogos de azar está dentre suas produções). O capítulo termina abordando os últimos dias de Cardano, o que me levou a atentar às lições que capturei de sua biografia:</p>
+<ul>
+<li><p>Desfrute do processo ( todo objetivo precisa de um período de construção, desfrute dele);</p></li>
+<li><p>Enxergue a importância do que está vivendo hoje;</p></li>
+<li><p>Use suas descobertas e sua boa posição ao seu favor, a não ser que tenha um motivo muito bom e palpável para “guardar segredo” ou “esperar”, pois as descobertas envelhecem, são superadas e a boa posição de hoje pode ruir amanhã;</p></li>
+<li><p>Se arrisque enquanto se mantém preparado, se expondo você está mais suscetível a ser ajudado pela sorte.</p></li>
+</ul>
