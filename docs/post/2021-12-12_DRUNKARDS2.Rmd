@@ -1,0 +1,183 @@
+---
+title: "Resumo de livro - O andar do bêbado (pt 2)"
+author: "Ianní Muliterno"
+date: 2021-12-12
+categories: ["R"]
+tags: ["R","Estatística","comunidade"]
+
+---  
+
+```{r setup, include=FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+ library(dplyr)
+simulate_game = function(make_switch = FALSE, n_doors = 3L, seed = NULL) {
+
+  # check the arguments
+  if (!is.logical(make_switch) | is.na(make_switch)) stop("`make_switch` needs to be TRUE or FALSE")
+  if (is.double(n_doors)) {
+    n_doors = as.integer(n_doors)
+    warning(paste("double value provided for `n_doors`: forced to integer value of", n_doors))
+  }
+  if (!is.integer(n_doors) | n_doors < 2) stop("`n_doors` needs to be a positive integer > 2")
+
+  # if a seed was provided, set it
+  if (!is.null(seed)) set.seed(seed)
+
+  # create a integer vector for the door indices
+  doors = seq_len(n_doors)
+
+  # create a boolean vector showing which doors are opened
+  # all doors are closed at the start of the game
+  isClosed = rep(TRUE, length = n_doors)
+
+  # sample one index for the door to hide the car behind
+  prize_index = sample(doors, size = 1)
+
+  # sample one index for the door initially chosen by the player
+  # this can be the same door as the prize door
+  choice_index = sample(doors, size = 1)
+
+  # now Monty Hall opens all doors the player did not choose
+  # except for one door
+  # if we have already picked the prize door, the one remaining closed door has a nonprize
+  # if we have not picked the prize door, the one remaining closed door has the prize
+  if (prize_index == choice_index) {
+    # if we have the prize, Monty Hall can open all but two doors:
+    #   ours, which we remove from the options to sample from and open
+    #   and one goat-conceiling door, which we do not open
+    isClosed[sample(doors[-prize_index], size = n_doors - 2)] = FALSE
+  } else {
+    # else, Monty Hall can also open all but two doors:
+    #   ours
+    #   and the prize-conceiling door
+    isClosed[-c(prize_index, choice_index)] = FALSE
+  }
+
+  # now Monty Hall asks us whether we want to make a switch
+  if (make_switch) {
+    # if we decide to make a switch, we can pick the closed door that is not our door
+    choice_index = doors[isClosed][doors[isClosed] != choice_index]
+  }
+
+  # we return a boolean value showing whether the player choice is the prize door
+  return(choice_index == prize_index)
+}
+
+
+#' Simulate N games of Monty Hall
+#' Calls the `simulate_game()` function `n` times and returns a boolean vector representing the games won
+simulate_n_games = function(n, seed = NULL, make_switch = FALSE, ...) {
+  # round the number of iterations to an integer value
+  if (is.double(n)) {
+    n = as.integer(n)
+  }
+  if (!is.integer(n) | n < 1) stop("`n_games` needs to be a positive integer > 1")
+  # if a seed was provided, set it
+  if (!is.null(seed)) set.seed(seed)
+  return(vapply(rep(make_switch, n), simulate_game, logical(1), ...))
+}
+
+
+# set the seed here
+# do not set the `seed` parameter in `simulate_game()`,
+# as this will make the function return `n_games` times the same results
+seed = 1
+
+# pick number of games you want to simulate
+n_games = 1000
+
+# simulate the games and store the boolean results
+results_without_switching = simulate_n_games(n = n_games, seed = seed, make_switch = FALSE)
+results_with_switching = simulate_n_games(n = n_games, seed = seed, make_switch = TRUE)
+
+# store the cumulative wins in a dataframe
+results = data.frame(
+  game = seq_len(n_games),
+  cumulative_wins_without_switching = cumsum(results_without_switching),
+  cumulative_wins_with_switching = cumsum(results_with_switching)
+)
+
+# function that turns values into nice percentages
+format_percentage = function(values, digits = 1) {
+  return(paste0(formatC(values * 100, digits = digits, format = 'f'), '%'))
+}
+
+```
+
+Hello again, dando continuidade ao resumo do andar do bêbado, vamos aos capítulos 2 e 3. Onde o autor passa mais tempo falando de casos reais bem interessantes.
+
+ Em "as leis das verdades e das meias verdades", é evidenciado como lembrar de conceitos básicos de probabilidade pode evitar erros que o “senso comum” nos leva a cometer. Uma aplicação bem fundamental que vale ressaltar é o julgamento da probabilidade de um fenômeno. Normalmente quando alguém nos descreve uma situação, quanto mais detalhes temos mais nos convencemos que aquela situação pode acontecer, ou seja, somos levados a esquecer um conceito básico de probabilidade : um evento isolado sempre será mais ou igualmente provável que a interseção deste evento com algum outro. Por exemplo, é mais provavel que alguém com gripado: 
+ 
+- 1 está espirrando muito, 
+- ou 2 que além disso apresente febre? 
+
+A resposta é 1. Isso continua sendo verdade mesmo que recebamos algumas informações sobre a pessoa que, do nosso ponto de vista, se correlacionem com algum desses fatos. Uma forma fácil de lembrar e entender isto é conhecer a seguinte regra, sejam $P_a$ e $P_b$ as probabilidades de 2 eventos independentes, então a probabilidade de que os eventos ocorram juntos é $P_a*P_b$ e como estamos falando de valores entre 0 e 1, então certamente o resultado desta multiplicação será sempre menor que o $P$ do evento isolado.
+
+ Leonard da exemplos mais perspicazes, envolvendo momentos em que estatística foi usada como argumento num tribunal, para defender ou acusar alguém. Mas sem spoilers disto, vamos apenas checar uma demonstração da afirmação acima.
+ 
+ ```{r, echo = T}
+a <- b <- seq(0.01,1,by=0.01)
+
+summary(a)
+
+
+data.frame(a) %>%
+  full_join(data.frame(b),by = character()) %>% 
+#realiza produto de varias probs 2 a 2
+  mutate(prod = a*b) %>% 
+#checa se o resultado do prod é menor que as probs isoladas  
+  mutate(check = prod <= a & prod <= b) %>% 
+  pull(check) %>% 
+  all()
+ ```
+ 
+Outro exemplo curioso mostra o _viés da disponibilidade_. O que é maior, o número de palavras de seis letras na língua inglesa que tem _n_ como quinta letra, ou o número de palavras de seis letras na língua inglesa que terminam com _ing_ ? A maioria das pessoas escolheria a segunda opção, porém se pensarmos um pouco, percebemos que o grupo de palavras de seis letras que tem _n_ como quinta letra, inclui todas as palavras de seis letras que terminam com _ing_ e outras mais, porém como é mais fácil pensar em palavras que terminam com ing como casos de palavras que  atendam essa condição, corremos o risco de nos deixar enganar. 
+
+Com exemplos como estes entramos e saímos do capítulo 2. Em seguida é apresentado como começou a  análise de processos incertos, introduzindo Cardano e chamando de “lei do espaço amostral” a sua visão de funcionamento do acaso. O poder dessa lei é exemplificado através do paradoxo de monty hall, onde um jogador escolhe 1 dentre 3 portas, tentando adivinhar qual delas esconde um prêmio. Mas existe uma pegadinha, o apresentador abre uma porta, que não tem o prêmio e antes de abrir a última porta não escolhida ele dá a chance do jogador mudar de opinião. É melhor mudar? vejamos 
+
+```{r}
+title = paste(
+  paste0('Mudar de porta garante ', sum(results_with_switching), ' de ', n_games, ' vitórias (', format_percentage(mean(results_with_switching)), ')'),
+  paste0('versus apenas ', sum(results_without_switching), ' vitórias (', format_percentage(mean(results_without_switching)), ') quando não há troca'),
+  sep = '\n'
+)
+
+# set some basic plotting parameters
+linesize = 1 # size of the plotted lines
+x_breaks = y_breaks = seq(from = 0, to = n_games, length.out = 10 + 1) # breaks of the axes
+y_limits = c(0, n_games) # limits of the y axis - makes y limits match x limits
+w = 8 # width for saving plot
+h = 5 # height for saving plot
+palette = setNames(c('blue', 'red'), nm = c('switching', 'without switching')) # make a named color scheme
+library(ggplot2)
+# make a line plot of the cumulative wins with and without switching
+ggplot(data = results) +
+  geom_line(aes(x = game, y = cumulative_wins_with_switching, col = names(palette[1])), size = linesize) +
+  geom_line(aes(x = game, y = cumulative_wins_without_switching, col = names(palette[2])), size = linesize) +
+  scale_x_continuous(breaks = x_breaks) +
+  scale_y_continuous(breaks = y_breaks, limits = y_limits) +
+  scale_color_manual(values = palette) +
+  theme_minimal() +
+  theme(legend.position = c(1, 1), legend.justification = c(1, 1), legend.background = element_rect(fill = 'white', color = 'transparent')) +
+  labs(x = 'Número de jogos') +
+  labs(y = 'Acumulado de jogos vencidos') +
+  labs(col = NULL) +
+  labs(caption = 'paulvanderlaken.com') +
+  labs(title = title)
+
+```
+
+
+“ O problema de Monty Hall é difícil de entender porque, a menos que pensemos nele com muito cuidado, o papel do apresentador acaba não sendo notado. Mas o apresentador está interferindo no jogo. Essa interferência fica mais evidente se supusermos que, em vez de 3 portas, temos 100. Ainda escolhemos a porta 1, mas agora temos uma probabilidade de 1 /100 de estar certos. Por outro lado, a chance de que o Maserati esteja atrás de uma das outras portas é de 99 /100. Como antes, o apresentador abre as portas que não escolhemos, deixando apenas uma e se assegurando de não abrir a porta que esconde o Maserati. Quando ele termina, a chance de que o Maserati esteja atrás da porta que escolhemos inicialmente ainda é de 1 /100, e a de que esteja atrás de uma das outras portas ainda é de 99 /100. Mas agora, graças à intervenção do apresentador, resta apenas uma porta, que representa todas as outras 99, e assim, a probabilidade de que o Maserati esteja atrás dela é de 99 /100! “
+
+É evidenciado que o foco de Cardano eram os jogos do azar e foi estudando esse mundo que ele conseguiu fazer contribuições ao estudo da probabilidade ( o livro dos jogos de azar está dentre suas produções). O capítulo termina abordando os últimos dias de Cardano, o que me levou a atentar às lições que capturei de sua biografia: 
+
+- Desfrute do processo ( todo objetivo precisa de um período de construção, desfrute dele); 
+
+- Enxergue a importância do que está vivendo hoje; 
+
+- Use suas descobertas e sua boa posição ao seu favor, a não ser que tenha um motivo muito bom e palpável para “guardar segredo” ou “esperar”, pois as descobertas envelhecem, são superadas e a boa posição de hoje pode ruir amanhã; 
+
+- Se arrisque enquanto se mantém preparado, se expondo você está mais suscetível a ser ajudado pela sorte.
+
+
