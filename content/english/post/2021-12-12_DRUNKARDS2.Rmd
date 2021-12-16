@@ -115,7 +115,7 @@ A resposta é 1. Isso continua sendo verdade mesmo que recebamos algumas informa
 
  Leonard da exemplos mais perspicazes, envolvendo momentos em que estatística foi usada como argumento num tribunal, para defender ou acusar alguém. Mas sem spoilers disto, vamos apenas checar uma demonstração da afirmação acima. 
  
- Esse código roda no RStudio, o exercício aqui é multiplicar valores diversos dentro do range $0.01$ e $1$, para então checar se o resultado é de fato menor que as probabilidades isoladas. o `r `all()` no final serve para checar se isso aconteceu em todos os casos.
+ Esse código roda no RStudio, o exercício aqui é multiplicar valores diversos dentro do range $0.01$ e $1$, para então checar se o resultado é de fato menor que as probabilidades isoladas. o `r all()` no final serve para checar se isso aconteceu em todos os casos.
  
  ```{r, echo = T}
 a <- b <- seq(0.01,1,by=0.01)
