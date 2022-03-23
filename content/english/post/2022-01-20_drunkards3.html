@@ -1,0 +1,131 @@
+---
+title: "Resumo de livro - O andar do bêbado (pt 3)"
+author: "Ianní Muliterno"
+date: 2022-03-22
+categories: ["R"]
+tags: ["R","Estatística","comunidade"]
+
+---  
+
+<script src="/blog2021/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>capítulo 4</p>
+<p>O capitulo começa falando da revolução científica, pois foi nesse movimento que um número cada vez maior de pessoas deixou de dar lugar a explicações esotéricas e sobrenaturais, onde fenômenos começaram a ser mensurados.</p>
+<p>Com isto começamos a ver o mundo das apostas gerar dúvidas sobre contagem e entra em evidência o princípio de que a probabilidade de um evento depende do número de maneiras pelas quais pode ocorrer, o que parece trivial se não consideramos o quão difícil pode ser realizar a contagem correta das possilidades. Uma loteria canadense descobriu isto, de maneira desagradável, quando sorteou 500 veículos selecionando 500 números dentre 2,4 milhões de participantes, confiando que a possibilidade de repetição dentre números sorteados era remota demais para ser tratada. Quando um participante reclamou 2 veículos, os 5% de chance deste evento mostraram seu peso.</p>
+<pre class="r"><code>#validar
+k = 500  # number of people in room
+p &lt;- numeric(k)  # create numeric vector to store probabilities
+for (i in 1:k)      {
+  q &lt;- 1 - (0:(i - 1))/2400000  # 1 - prob(no matches)
+  p[i] &lt;- 1 - prod(q)  }
+
+p[k]</code></pre>
+<pre><code>## [1] 0.05065478</code></pre>
+<p>Ainda sobre contar corretamente o número de maneiras pelas quais algo pode ocorrer, chegamos à época de Pascal, que aos 13 anos foi levado pelo pai ao grupo de discussões Académie de Mersenne, onde conheceu René Descastes e Pierre de Fermat. Isso o colocou em contato com o novo método científico, então ao contrário de Cardano, ele seria apresentado primeiro à matemática e depois às apostas. Sua entrada nesse mundo se deu de forma curiosa, havia recebido orientação médica para evitar trabalho mental continuado e durante o cumprimento desta tarefa, perdeu seu pai. De repente o jovem de 27 anos se viu com uma herança e uma ordem para “relaxar”.</p>
+<p>Dentre festas e jogatinas, um Don Juan e apostador leva a Pascal um problema importante: Suponha que você e outro jogador estão participando de um jogo no qual ambos tem a mesma chance de vencer, e o vencedor será o primeiro que atingir um certo número de pontos. Em um momento, o jogo é interrompido quando um dos jogadores está na liderança. Qual é a maneira mais justa de dividir o dinheiro apostado?
+Foi a busca desta resposta que iniciou uma das grandes correspondências da história da matemática, entre Pascal e Fermat.</p>
+<p>O problema dos pontos pode ser entendido, como vimos, através de um case de jogo, onde queremos saber qual a probabilidade dos Braves ou Yankees sair vitorioso numa melhor de 7. Considere a seguinte situação, já se passaram 2 desses 7 jogos e os Braves venceram, para chegar nas probabilidades de vitoria, precisamos entender que os próximos <span class="math inline">\(5\)</span> jogos podem ter <span class="math inline">\(2^{5}\)</span> resultados possíveis, para que o Yankees vença ele precisa ganhar 4 ou mais dos 5 jogos. Contando os casos de vitoria dos Yankees temos:</p>
+<pre class="r"><code>yankees_champ &lt;- c(&quot;YYYYY&quot;,&quot;BYYYY&quot;,&quot;YBYYY&quot;,&quot;YYBYY&quot;,&quot;YYYBY&quot;,&quot;YYYYB&quot;)
+
+data.frame(`Yankees vitoriosos` = yankees_champ) %&gt;% kableExtra::kable(align = &quot;c&quot;)</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Yankees.vitoriosos
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+YYYYY
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+BYYYY
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+YBYYY
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+YYBYY
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+YYYBY
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+YYYYB
+</td>
+</tr>
+</tbody>
+</table>
+<p>O que representa <span class="math inline">\(6/32 \cong 19\%\)</span>, então caso por algum motivo a disputa precise ser parada neste momento, a distribuição das apostas seria <span class="math inline">\(19\%\)</span> em favor dos Yankees e <span class="math inline">\(81\%\)</span> em favor dos Braves.</p>
+<p>Esta contagem de resultados possíveis de uma disputa, é facilitada pelo triângulo de pascal uma construção a partir de combinações que possui diversas propriedades. Para resolver este problema o que precisamos saber é:</p>
+<ul>
+<li><p>a quantidade de jogos a analisar na disputa define a linha do triângulo para a qual vamos olhar</p></li>
+<li><p>para calcular todos os resultados possíveis utilizamos <span class="math inline">\(2^{nº.da.linha}\)</span></p></li>
+</ul>
+<p>Apesar de interessante, o triângulo de Pascal, aqui, é uma ponte para entender que a solução deste problema de maneira mais generalizada está na distribuição binomial <code>$f(x) = \binom{n}{k}p^kq^{n-k}$</code>. Imagine por exemplo que temos a informação de performance anterior dos times e sabemos que o Braves tem performance 5% superior a dos Yankees. Para calcular as probabilidades de vitória precisamos agora multiplicar a contagem de possibilidades pela suposta probabilidade inicial de vitória, daí temos o seguinte:</p>
+<pre class="r"><code># problema dos pontos -&gt; triangulo de pascal -&gt; distribuição binomial
+
+
+ #3 formas de calcular as chances de vitoria do pior time  numa melhor de 7 onde 
+# 1 time é 5% superior em performance
+# criterio de vitoria : vencer 4 dos 7 jogos
+#---  1 pela funcao de geração de amostra
+store &lt;- rbinom(100000,7,0.55)
+sum(store &lt;= 3)/length(store)</code></pre>
+<pre><code>## [1] 0.38946</code></pre>
+<pre class="r"><code>#---  2 pela função de calculo pontual
+sum(dbinom(0:3,7,0.55))</code></pre>
+<pre><code>## [1] 0.3917122</code></pre>
+<pre class="r"><code>#---  3 pela função de distribuição acumulada
+pbinom(3,7,0.55)</code></pre>
+<pre><code>## [1] 0.3917122</code></pre>
+<p>Depois da grande contribuição que foi o seu triângulo de combinações, Pascal passou por uma espécie de transe, do qual voltou como que saído de uma epifania, já não era mais o mesmo homem. Se desfez de quase todos os seus bens, se afastou dos amigos e viu minado o seu amor pela geometria. Afirmava que Deus o havia libertado e em defesa do cristianismo que abandonara por maior parte da vida, começou a escrever pensées (pensamentos), obra que partiu sem concluir e que segundo Milodnov é editada até hoje. Nesta obra Pascal analisa os prós e contras dos nossos deveres com Deus, sob a ótica de um jogador:</p>
+<p>Suponha que :</p>
+<ul>
+<li>Não sabemos se Deus existe, então sua existência é um acaso (50%)<br />
+</li>
+<li>Podemos viver de maneira errada e completamente egoísta, sempre em busca de vantagens<br />
+</li>
+<li>Podemos ser cristãos, agindo com empatia, benevolência e caridade o que pode nos levar conscientemente a situações de desvantagem<br />
+</li>
+<li>Caso Deus exista os cristãos tem o ganho infinito da vida e graça eternas, caso contrario a pessoa tem um “saldo negativo” por ter seguido a vida cristã, então:</li>
+</ul>
+<p><span class="math display">\[
+ E[X] = \infty *1/2 -y*1/2 = \infty
+ \]</span>
+Se independente da existência de Deus agimos como cristãos, nosso ganho esperado é infinito. Os sacrifícios da bondade e piedade tem peso limitado, enquanto os frutos de uma vida no paraíso são imensuráveis, infinitos. Com este argumento, Pascal afirma que todos deveriam seguir as leis de Deus, conceito conhecido como a aposta de Pascal.</p>
+<p>contando um pouco de suas histórias enquanto fala de suas contribuições: triângulo de pascal para o problema dos pontos e a “aposta de Pascal” que originou o conceito de “esperança matemática”.</p>
+<p>No capítulo 5, temos outro religioso citado, dessa vez introduzindo a argumentação de que a aleatoriedade perfeita não existe. Em seguida é apresentada a lei de Benford, que defende o favorecimento de algarismos menores. Esta lei tem bastante aplicação em dados financeiros e busca de fraude.</p>
+<p>Esta “ausência de aleatoriedade perfeita” é um fato na maioria dos casos, fazendo com que precisemos observar vários resultados de um sistema, afim de entender a probabilidade de cada resultado ocorrer, esta é a probabilidade determinística. Já a probabilidade subjetiva considera como a amostra é produzida, ou seja, se a amostra vem do lançamento de um dado de 6 lados, se espera uma probabilidade de <span class="math inline">\(1/6\)</span>.</p>
+<p>Pensando na probabilidade da amostra como ela se apresenta, temos o caso de Jagger, que resolveu observar roletas num casino, até descobrir que uma delas apresentava um viés nos resultados e começar a lucrar com isso. Se dificilmente existe um sistema perfeitamente aleatório no mundo real, como habitantes do mundo real faz sentido nos perguntarmos então: Quais as chances que um sistema imperfeito fornece a cada um de seus resultados possíveis? Foi essa questão que moveu Bernoulli, para ele era insano o conceito de conhecimento prévio de uma probabilidade, ou probabilidade a priori, sem uma observação prévia.</p>
+<p>As contribuições de Bernoulli para o estudo da probabilidade, demandou uma base de calculo, base esta que havia debutado há pouco graças a Leibniz e Newton. Os principais conceitos utilizados foram os de sequência, série e limite. Para ilustrar a importância de combina-los, Mlodinov apresenta o paradoxo de Zenão, um filósofo do sec V a.C.</p>
+<p>Zenão afirmou que: Se uma aluna deseja andar até a porta, que está a 1 metro de distância, mas para chegar lá ela precisa chegar ao meio do caminho e para tanto, precisa ainda chegar ao meio do meio do caminho e assim por diante, então essa estudante andaria para sempre, visto que a sequência não tem fim, logo segundo Zenão, nunca podemos chegar a lugar algum. Conclusão pouco animadora, porém lógica, afinal a sequência é de fato infinita. O problema é que o limite não foi considerado, pois a distância total ainda é de 1 metro, a capacidade de dar nano-passos é que tornaria a jornada infinita.</p>
+<pre class="r"><code>library(ggplot2)
+nano_passos &lt;- 1:100
+dist &lt;- 1/(2^(nano_passos))
+
+ggplot(data.frame(nano_passos,dist),aes(x = nano_passos,y = dist)) +
+  geom_line() +
+  ggtitle(&quot;Gráfico de linhas mostrando cada passo como metade do anterior&quot;)</code></pre>
+<p><img src="/blog2021/english/post/2022-01-20_drunkards3_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>#soma de todas as distâncias percorridas pelos infinitos passos
+sum(dist)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>Conhecendo o conceito de limite sabemos então, que só não chegamos a nenhum lugar se ficamos infinitamente mais estáticos, ou nos movemos infinitamente menos. O que ainda pode render um bom papo de bar filosófico, porém com um final mais feliz.
+História da família de Bernoulli.</p>
+<p>refs <a href="https://www.ime.usp.br/~abe/lista/pdfr6aqDSXtbC.pdf" class="uri">https://www.ime.usp.br/~abe/lista/pdfr6aqDSXtbC.pdf</a>
+<a href="https://www.youtube.com/watch?v=KqeZUMN911Y" class="uri">https://www.youtube.com/watch?v=KqeZUMN911Y</a></p>

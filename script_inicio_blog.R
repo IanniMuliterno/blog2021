@@ -19,5 +19,5 @@ stop_server()
 blogdown::build_site()
 # preview
 
-serve_site()
+blogdown::serve_site()
 #e também um commit e push para ficar ativo online
