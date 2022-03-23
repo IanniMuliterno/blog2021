@@ -56,8 +56,7 @@
 <meta name="twitter:image" content="https://iannimuliterno.github.io/blog2021/images/site-feature-image.png"/>
 
 <meta name="twitter:title" content="Resumo de livro - O andar do bêbado (pt 3)"/>
-<meta name="twitter:description" content="capítulo 4
-O capitulo começa falando da revolução científica, pois foi nesse movimento que um número cada vez maior de pessoas deixou de dar lugar a explicações esotéricas e sobrenaturais, onde fenômenos começaram a ser mensurados."/>
+<meta name="twitter:description" content="Finalmente o resumo de mais um par de capítulos muito interessantes."/>
 
 
     
@@ -163,7 +162,7 @@ O capitulo começa falando da revolução científica, pois foi nesse movimento 
                                                 22/3/2022
                                            </span>
                         <em class="fas fa-stopwatch"></em>
-                        <span class="reading-time">7-minute read</span>
+                        <span class="reading-time">9-minute read</span>
                     </div>
                 
             </div>
@@ -173,8 +172,8 @@ O capitulo começa falando da revolução científica, pois foi nesse movimento 
 <script src="/blog2021/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>capítulo 4</p>
-<p>O capitulo começa falando da revolução científica, pois foi nesse movimento que um número cada vez maior de pessoas deixou de dar lugar a explicações esotéricas e sobrenaturais, onde fenômenos começaram a ser mensurados.</p>
+<p>Finalmente o resumo de mais um par de capítulos muito interessantes. Muito focado em paradoxos estatísticos e, curiosamente, numa mistura de teologia com o estudo do acaso… Curioso demais, afinal quem diria que alguém calculou se vale a pena ou não ser cristão?!</p>
+<p>O capitulo 4, começa falando da revolução científica, pois foi nesse movimento que um número cada vez maior de pessoas deixou de dar lugar a explicações esotéricas e sobrenaturais, onde fenômenos começaram a ser mensurados.</p>
 <p>Com isto começamos a ver o mundo das apostas gerar dúvidas sobre contagem e entra em evidência o princípio de que a probabilidade de um evento depende do número de maneiras pelas quais pode ocorrer, o que parece trivial se não consideramos o quão difícil pode ser realizar a contagem correta das possilidades. Uma loteria canadense descobriu isto, de maneira desagradável, quando sorteou 500 veículos selecionando 500 números dentre 2,4 milhões de participantes, confiando que a possibilidade de repetição dentre números sorteados era remota demais para ser tratada. Quando um participante reclamou 2 veículos, os 5% de chance deste evento mostraram seu peso.</p>
 <pre class="r"><code>#validar
 k = 500  # number of people in room
@@ -249,7 +248,7 @@ YYYYB
 #---  1 pela funcao de geração de amostra
 store &lt;- rbinom(100000,7,0.55)
 sum(store &lt;= 3)/length(store)</code></pre>
-<pre><code>## [1] 0.38946</code></pre>
+<pre><code>## [1] 0.38898</code></pre>
 <pre class="r"><code>#---  2 pela função de calculo pontual
 sum(dbinom(0:3,7,0.55))</code></pre>
 <pre><code>## [1] 0.3917122</code></pre>
@@ -288,10 +287,11 @@ ggplot(data.frame(nano_passos,dist),aes(x = nano_passos,y = dist)) +
 <pre class="r"><code>#soma de todas as distâncias percorridas pelos infinitos passos
 sum(dist)</code></pre>
 <pre><code>## [1] 1</code></pre>
-<p>Conhecendo o conceito de limite sabemos então, que só não chegamos a nenhum lugar se ficamos infinitamente mais estáticos, ou nos movemos infinitamente menos. O que ainda pode render um bom papo de bar filosófico, porém com um final mais feliz.
-História da família de Bernoulli.</p>
-<p>refs <a href="https://www.ime.usp.br/~abe/lista/pdfr6aqDSXtbC.pdf" class="uri">https://www.ime.usp.br/~abe/lista/pdfr6aqDSXtbC.pdf</a>
-<a href="https://www.youtube.com/watch?v=KqeZUMN911Y" class="uri">https://www.youtube.com/watch?v=KqeZUMN911Y</a></p>
+<p>Conhecendo o conceito de limite sabemos então, que só não chegamos a nenhum lugar se ficamos infinitamente mais estáticos, ou nos movemos infinitamente menos. O que ainda pode render um bom papo de bar filosófico, porém com um final mais feliz.</p>
+<p>Voltando para como o calculo auxiliou Bernoulli a contribuir com o estudo da probabilidade, introduzo o teorema Áureo, mais conhecido como lei dos grandes números._O teorema demonstra que uma amostra suficientemente grande reflete quase com certeza a composição subjacente da população testada_ . Falando em termos do lançamento de um dado, isso significa que, um dados de 6 lados jogado um número suficientemente grande de vezes, vai cair em cada um dos 6 lados com probabilidade de aproximadamente <span class="math inline">\(1/6\)</span>, como é se esperar de um dado justo.</p>
+<p>O capítulo 5 finaliza revelando que o teorema Áureo quase não foi terminado, já que Bernoulli havia falecido antes de faze-lo e o convívio familiar não era bom o suficiente para com o herdeiro mais “lógico” do trabalho, seu irmão. No fim das contas o teorema foi concluído e distribuído, porém uma pergunta de Bernoulli ainda ficou sem resposta : como inferir, a partir dos dados, qual a probabilidade subjacente do sistema analisado?</p>
+<p>Ao contrário dos curiosos da matemática naquela época, os leitores do andar do bêbado não precisam esperar décadas, o livro responde no capítulo 6 e eu, no próximo post.</p>
+<p>See ya.</p>
 </div>
         <div class="post-footer">
             <div class="info">
