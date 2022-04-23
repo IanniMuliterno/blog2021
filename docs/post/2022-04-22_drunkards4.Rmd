@@ -1,0 +1,33 @@
+---
+title: "Resumo de livro - O andar do bêbado (pt 4)"
+author: "Ianní Muliterno"
+date: 2022-04-22
+categories: ["R"]
+tags: ["R","Estatística","comunidade"]
+
+---  
+Se por duas vezes seguidas uma mãe perde seu bebê poucas semanas depois do nascimento, qual a chance de que ela seja a assassina dos próprios filhos? 
+
+Para nos apresentar o conceito de probabilidade condicional, Leonard mantém esse nível de polêmica em vários de seus exemplos. Um deles, trata de um caso pessoal, quando ele foi diagnosticado como HIV positivo e recebeu do médico a notícia de que 1 em 1000 de que ele estivesse saudável. A questão com a probabilidade condicional é que é muito fácil confundir o evento que depende de alguma outra ocorrência, isso faz com que erros inocentes e falácias se tornem mais críveis.
+
+No caso do teste de HIV, o médico citou erroneamente a probabilidade do teste resultar num falso positivo, o que pode parecer correto, visto que a tradução de $P(falso positivo) = frac{1}{1000}$ é: a cada 1000 testes entre pessoas saudáveis o teste vai resultar como HIV positivo 1 vez, mas esse número não é correto. Ele confundiu a probabilidade de que o exame desse positivo _se_ Leonard não fosse HIV-positivo com a probabilidade de que ele não fosse HIV-positivo se o exame desse positivo.
+
+Para avaliar as chances do resultando de um teste para doença errar, é importante considerar em que grupo a pessoa se enquadra, no caso de Leonard é homem, americano, branco, hétero e não usuário de drogas intravenosas. Vamos considerar então que 10mil pessoas desse grupo foram testadas e que segundo estudos, aproximadamente 1 em cada 10000 homens desse grupo estava com HIV de fato. Presumindo que a taxa de falsos negativos seja próxima de 0, ou seja, aproximadamente 1 pessoa de cada 10mil apresentaria um exame positivo em virtude da presença da infecção. Agora voltamos a tava de falso positivo $frac{1}{1000}$ e percebemos que 10 outros casos de exames positivos irão acontecer em homens saudáveis. Os outros 9989 homens estão de fato saudáveis e irão de fato testar negativo.
+
+Para calcular corretamente a chance de Leonard estar saudável, mesmo testando positivo, precisamos olhar apenas para os 11 que testaram positivo no exemplo acima e notar que 10/11 foram falsos positivos, ou seja, 1 em cada 11 pessoas com resultado positivo estão de fato infectadas. O médico apresentou a chance do exame errar quando feito em alguém saudável, mas deveria ter apresentado a chance de erro dado o resultado positivo, que é um valor muito maior.  
+
+Em resumo é necessário saber também a prevalência da doença na população, quanto mais rara a doença menos podemos contar apenas com uma baixa taxa de falsos positivos. Exemplo, no grupo em que Leonard se enquadra, a doença acomente 1 em cada 10000 indivíduos, se checamos os homossexuais o valor vai para 100 em cada 10000, isso significa que teríamos 100 verdadeiros positivos e 10 falsos positivos, agora 100 em 110 pessoas com resultado positivo estão de fato infectadas.
+
+Saindo dos erros mais inocentes que ocorrem nos testes médicos, vamos para o tribunal verificar como advogados podem usar a probabilidade condicional com má fé. Advogados podem usar a falácia da acusação, para levar o júri a condenar um suspeito com base em provas frágeis. Esse foi o caso de Sally Clark. Seu primeiro filho morreu com 11 semanas, de morte súbita infantil, o segundo morreu com 8 semanas de vida, pelas mesmas causas ( ou aparente falta delas). Sally foi presa e acusada de sufocar seus filhos. Um pediatra foi ouvido e afirmou que a chance da morte súbita das duas crianças era de 1/73 milhões, mas mesmo esse argumento sendo suficiente para prende-la foi calculado elevando ao quadrado a probabilidade de que um bebê sofra morte súbita. Em outras palavras, o calculo considerou que a morte dos filhos de uma mesma mãe, pela mesma causa eram independentes.
+
+Para entender por que Sally é inocente, precisamos considerar o erro da inversão: o que queremos não é a probabilidade de que duas crianças morram de morte súbita, e sim a probabilidade de que as duas que morreram tenham morrido de morte súbita. O caso foi esclarecido pela própria Royal Statistical Society, que apontou a falácia da acusação. O júri precisa considerar duas explicações concorrentes, morte súbita ou assassinato. Apesar de duas coisas difíceis de ocorrer, com os dados da época, um matemático estimou que a chance da morte súbita nesse caso era 9 vezes maior que assassinato. De fato, anos depois descobriram que o patologista que trabalhava para a acusação omitiu a informação de que o segunda filho tinha infecção bacteriana que podia ter provocado a morte e com base nisso Sally foi liberta.
+
+Bayes foi o pioneiro no estudo de como inferir probabilidade real de algo com base nos dados, porém foi Laplace quem conseguiu chamar atenção para a ideia. A tarefa não foi fácil, pois ter um número fixo passava mais confiança do que admitir que aquela probabilidade, inferida a partir de dados, tinha alguma variação.
+
+O uso de teoria matemática nas medições começou em meados do sec XVIII, o livro aponta que Isaac Newton parece ter sido pioneiro, utilizando média nos seus estudos sobre óptica. No fim do mesmo século, com a física-experimental buscando demandando mais rigor matemático, entra em destaque Pierre-Simon de Laplace, cujo trabalho em colaboração com Lavoisier e Coulomb, contribuiu para o desenvolvimento do sistema métrico.
+
+Avaliação de vinhos, notas de prova, limite de velocidade… Muitas coisas dependem de um sistema de medição e os erros de medição estão presentes no nosso cotidiano, presentes e muitas vezes ignorados. Como na avaliação de vinho, onde um somelier tem mais chances de sentir notas de couro quando escuta um outro somelier afirmar isso. 
+
+Para entender as medições, é preciso compreender a natureza da variação nos dados causada por erros aleatórios. Suponha que ofereçamos diversos vinhos a 15 críticos, ou que ofereçamos repetidamente a um mesmo crítico em dias diferentes, ou ambos. Podemos resumir o resultado da avaliação utilizando a média das classificações, mas supondo que a média é 90, pode ter acontecido de que todas as notas foram iguais  ou que as notas foram 80, 81, 82 ... 99, 100. Ambos os conjuntos de notas tem a mesma média, mas passam ideias diferentes. 
+
+Estes exemplos abrem alas para o desvio padrão, que caracteriza o quanto um conjunto de dados se aproxima da média, quantificando justamente a incerteza dos dados. A partir daí é introduzida a lei dos erros e consequentemente a distribuição normal, talvez a distribuição matemática mais conhecida do mundo.
