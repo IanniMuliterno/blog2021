@@ -108,14 +108,5 @@ Primeiro post \o/. Esse é um tema no qual coincidentemente esbarrei enquanto ta
       <description></description>
     </item>
     
-    <item>
-      <title>About</title>
-      <link>https://iannimuliterno.github.io/blog2021/about/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://iannimuliterno.github.io/blog2021/about/</guid>
-      <description>Meu nome é Ianní Muliterno, eu sou Estatística e meu objetivo aqui é registrar coisas que eu acho importante e/ou que preciso revisitar com certa frequência.</description>
-    </item>
-    
   </channel>
 </rss>
