@@ -1,0 +1,26 @@
+---
+title: "Tidytuesday - voos comerciais na Europa"
+author: "Ianní Muliterno"
+date: 2022-07-26
+categories: ["R"]
+tags: ["R","Estatística","comunidade"]
+
+---  
+
+<script src="2022-07-26_tidytuesday flights_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Hello my friend. Passando para compartilhar uma breve curiosidade sobre os dados disponibilizados no tidytuesday. Semana retrasada (12/07) a base foi sobre transporte aéreo comercial, disponibilizado pela eurostat. A base contém dados de chegada e partida de aeronaves desde 2016, contendo os registros feitos por duas fontes : <em>Network Manager</em> e <em>Aiport Operator</em>.</p>
+<p>A primeira curiosidade foi identificar inconsistências entre as duas fontes.
+<img src="/blog2021/english/post/2022-07-26_tidytuesday%20flights_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Em seguida, o objetivo foi entender como o impacto da pandemia vem reverberando nas viagens europeias.</p>
+<pre><code>## `summarise()` has grouped output by &#39;YEAR&#39;, &#39;MONTH_NUM&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="/blog2021/english/post/2022-07-26_tidytuesday%20flights_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Em comparação com o mesmo mês do ano anterior, é possível observar que o primeiro trimestre de 2021 demonstra o aumento mais expressivo, o que faz sentido visto que <a href="https://www.cnnbrasil.com.br/saude/quais-os-paises-que-ja-comecaram-a-vacinacao-contra-a-covid-19/">vários países da Europa começaram a primeira onda de vacinações no fim de 2020</a>. com as variantes, novas ondas de contagio e novas doses de vacinação, que ocorreram ao longo de 2021, vemos que a “régua abaixa”.</p>
+<p>Por fim, já que os dados são razoavelmente recentes, vão até maio deste ano, resolvi checar por país a variação de voos em comparação ao mês anterior e foi no mínimo curioso.</p>
+<pre><code>## `summarise()` has grouped output by &#39;STATE_NAME&#39;, &#39;MONTH_NUM&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="/blog2021/english/post/2022-07-26_tidytuesday%20flights_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Ucrânia e Israel com grande aumento de movimentação. A guerra contra a Russia foi a primeira coisa que me veio a mente como justificativa de aeroportos tão agitados, achei este um motivo fair enough e resolvi pesquisar um pouco sobre Israel.</p>
+<p>Descobri que desde de janeiro o país está trabalhando para diminuir restrições. A primeira ação foi <a href="https://www.cnnbrasil.com.br/internacional/israel-reduz-restricao-a-viajantes-mesmo-com-aumento-de-casos-da-omicron/">Admitir estrangeiros provavelmente imunes</a>. <a href="https://www.travel3.com.br/acontece-no-turismo/turismo-de-israel/">Em maio deixaram de pedir PCR</a>, porém foi só no fim do mês então dificilmente teve impacto nesse gráfico. Pesquisando um pouco mais encontrei informações sobre a força do turismo religioso em Israel e como as cidades lotam nos feriados religiosos. Alguns deles acontecem segundo o calendário judaico e o dia da independência deles foi o evento que encontrei relacionado ao fim de abril e inicio de maio. Ainda assim, uma investigação maior seria interessante, visto que o calendário judaico tem mais variações que o nosso. <a href="https://pt.wikipedia.org/wiki/Calend%C3%A1rio_judaico">Vide a boa e velha wikipedia</a>.</p>
+<p>Isso é tudo, apenas uma passada rápida para falar que quem é vivo sempre aparece e que o final dos meus 50 centavos sobre o andar do bêbado estão vindo aí.</p>
+<p>Salut.</p>

@@ -1,0 +1,105 @@
+---
+title: "Tidytuesday - voos comerciais na Europa"
+author: "Ianní Muliterno"
+date: 2022-07-26
+categories: ["R"]
+tags: ["R","Estatística","comunidade"]
+
+---  
+```{r, include=FALSE, echo = FALSE}
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+#https://cran.r-project.org/web/packages/gghighlight/vignettes/gghighlight.html
+library(gghighlight)
+
+
+flights <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-07-12/flights.csv')
+
+```
+
+Hello my friend. Passando para compartilhar uma breve curiosidade sobre os dados disponibilizados no tidytuesday. Semana retrasada (12/07) a base foi sobre transporte aéreo comercial, disponibilizado pela eurostat. A base contém dados de chegada e partida de aeronaves desde 2016, contendo os registros feitos por duas fontes : *Network Manager* e *Aiport Operator*.
+
+A primeira curiosidade foi identificar inconsistências entre as duas fontes.
+```{r, echo = F, warning=FALSE}
+flights %>%
+  mutate(diff_arrivals = FLT_ARR_1 - FLT_ARR_IFR_2,
+         diff_departures = FLT_DEP_1 - FLT_DEP_IFR_2) %>%
+  select(starts_with("diff")) %>%
+  pivot_longer(1:2, values_to = "diff",names_to = "arr_or_dept") %>%
+  ggplot(aes(y = diff, x = arr_or_dept, fill = arr_or_dept)) +
+  geom_violin() +
+  #https://ggplot2.tidyverse.org/reference/labs.html
+  labs(title = "Diferença em fontes",
+       subtitle = "Comparação dos registros advindos do Network Manager e do Airport Operator",
+       #colour = "Arrivals and Departures",
+       x = "Arr. Dept.",
+       y = "Difference",
+       caption = "Fonte: Eurocontrol")
+```
+
+Em seguida, o objetivo foi entender como o impacto da pandemia vem reverberando nas viagens europeias.
+
+```{r,  echo = FALSE, warning=FALSE}
+flights %>%
+  filter(YEAR > 2019) %>%
+  group_by(YEAR,MONTH_NUM,MONTH_MON) %>%
+  summarise(arrivals_1 = sum(FLT_ARR_1, na.rm = T),
+            depts_1 = sum(FLT_DEP_1, na.rm = T)) %>%
+  arrange(MONTH_NUM,YEAR) %>%
+  group_by(MONTH_MON) %>%
+  mutate(arr_last_year = 1 - (arrivals_1-lag(arrivals_1))/lag(arrivals_1),
+         dept_last_year = 1 - (depts_1 - lag(depts_1))/lag(depts_1),
+         ano_mes = ym(paste0(YEAR,"_",MONTH_NUM))) %>%
+  drop_na(arr_last_year) %>%
+  ggplot(aes(y = arr_last_year, x = ano_mes)) +
+  geom_point() +
+  gghighlight(arr_last_year > 1, label_key = MONTH_MON) +
+  scale_y_continuous(labels = scales::percent,
+                     breaks = seq(-1, 2, by = 0.2)) +
+  labs(title = "Chegada de voos comerciais na Europa",
+       subtitle = "Comparação com mesmo mês do ano anterior",
+       #colour = "Arrivals and Departures",
+       x = "ano mês",
+       y = "Arrivals",
+       caption = "Fonte: Eurocontrol")
+```
+
+Em comparação com o mesmo mês do ano anterior, é possível observar que o primeiro trimestre de 2021 demonstra o aumento mais expressivo, o que faz sentido visto que [vários países da Europa começaram a primeira onda de vacinações no fim de 2020](https://www.cnnbrasil.com.br/saude/quais-os-paises-que-ja-comecaram-a-vacinacao-contra-a-covid-19/). com as variantes, novas ondas de contagio e novas doses de vacinação, que ocorreram ao longo de 2021, vemos que a "régua abaixa".
+
+Por fim, já que os dados são razoavelmente recentes, vão até maio deste ano, resolvi checar por país a variação de voos em comparação ao mês anterior e foi no mínimo curioso.
+
+```{r, echo = FALSE, warning=FALSE}
+flights %>%
+  filter(YEAR > 2021) %>%
+  group_by(STATE_NAME,MONTH_NUM,MONTH_MON) %>%
+  summarise(arrivals_1 = sum(FLT_ARR_1, na.rm = T),
+            depts_1 = sum(FLT_DEP_1, na.rm = T)) %>%
+  group_by(STATE_NAME) %>%
+  slice_max(MONTH_NUM, n=2) %>%
+  arrange(STATE_NAME,MONTH_NUM) %>%
+  mutate(arr_last_mon = 1 - (arrivals_1-lag(arrivals_1))/lag(arrivals_1),
+         dept_last_mon = 1 - (depts_1 - lag(depts_1))/lag(depts_1),
+         ano_mes = ym(paste0("2022_",MONTH_NUM))) %>%
+  drop_na(arr_last_mon) %>%
+  ggplot(aes(y = arr_last_mon, x = STATE_NAME)) +
+  geom_bar(stat="identity") +
+  gghighlight(arr_last_mon >= 1, label_key = MONTH_MON) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(title = "Chegada de voos comerciais por país",
+       subtitle = "% de mudança entre 04/22 e 05/22 com destaque para >= 100%",
+       #colour = "Arrivals and Departures",
+       x = "State",
+       y = "Arrivals",
+       caption = "Fonte: Eurocontrol") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1))
+
+```
+
+Ucrânia e Israel com grande aumento de movimentação. A guerra contra a Russia foi a primeira coisa que me veio a mente como justificativa de aeroportos tão agitados, achei este um motivo fair enough e resolvi pesquisar um pouco sobre Israel.
+
+Descobri que desde de janeiro o país está trabalhando para diminuir restrições. A primeira ação foi [Admitir estrangeiros provavelmente imunes](https://www.cnnbrasil.com.br/internacional/israel-reduz-restricao-a-viajantes-mesmo-com-aumento-de-casos-da-omicron/). [Em maio deixaram de pedir PCR](https://www.travel3.com.br/acontece-no-turismo/turismo-de-israel/), porém foi só no fim do mês então dificilmente teve impacto nesse gráfico. Pesquisando um pouco mais encontrei informações sobre a força do turismo religioso em Israel e como as cidades lotam nos feriados religiosos. Alguns deles acontecem segundo o calendário judaico e o dia da independência deles foi o evento que encontrei relacionado ao fim de abril e inicio de maio. Ainda assim, uma investigação maior seria interessante, visto que o calendário judaico tem mais variações que o nosso. [Vide a boa e velha wikipedia](https://pt.wikipedia.org/wiki/Calend%C3%A1rio_judaico). 
+
+Isso é tudo, apenas uma passada rápida para falar que quem é vivo sempre aparece e que o final dos meus 50 centavos sobre o andar do bêbado estão vindo aí.
+
+Salut.
