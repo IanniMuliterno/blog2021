@@ -6,7 +6,16 @@
     <description>Recent content in R on My blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://iannimuliterno.github.io/blog2021/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tidytuesday - voos comerciais na Europa</title>
+      <link>https://iannimuliterno.github.io/blog2021/post/2022-07-26_tidytuesday-flights/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://iannimuliterno.github.io/blog2021/post/2022-07-26_tidytuesday-flights/</guid>
+      <description>Hello my friend. Passando para compartilhar uma breve curiosidade sobre os dados disponibilizados no tidytuesday.</description>
+    </item>
+    
     <item>
       <title>Resumo de livro - O andar do bêbado (pt 4)</title>
       <link>https://iannimuliterno.github.io/blog2021/post/2022-04-22_drunkards4/</link>

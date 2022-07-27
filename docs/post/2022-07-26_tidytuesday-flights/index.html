@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html  dir="ltr" lang="en" data-theme=""><head>
-    <title> Ianní Muliterno | About </title>
+    <title> Ianní Muliterno | Tidytuesday - voos comerciais na Europa </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/blog2021/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/blog2021/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="/blog2021/about/">
+    <link rel="canonical" href="/blog2021/post/2022-07-26_tidytuesday-flights/">
 
     
     
@@ -55,8 +55,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://iannimuliterno.github.io/blog2021/images/site-feature-image.png"/>
 
-<meta name="twitter:title" content="About"/>
-<meta name="twitter:description" content="Meu nome é Ianní Muliterno, eu sou Estatístico e meu objetivo aqui é registrar coisas que eu acho importante e/ou que preciso revisitar com certa frequência."/>
+<meta name="twitter:title" content="Tidytuesday - voos comerciais na Europa"/>
+<meta name="twitter:description" content="Hello my friend. Passando para compartilhar uma breve curiosidade sobre os dados disponibilizados no tidytuesday."/>
 
 
     
@@ -126,7 +126,7 @@
                    title="">Posts</a></li>
         
             
-            <li><a class="current"
+            <li><a 
                    href="/blog2021/about/"
                         
                    title="">About</a></li>
@@ -154,20 +154,69 @@
         <div class="post-content">
             
             <div class="post-title">
-                <h3>About</h3>
+                <h3>Tidytuesday - voos comerciais na Europa</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                26/7/2022
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">2-minute read</span>
+                    </div>
                 
             </div>
 
-            <p>Meu nome é Ianní Muliterno, eu sou Estatístico e meu objetivo aqui é registrar coisas que eu acho importante e/ou que preciso revisitar com certa frequência. Que essas notas possam te ajudar também, um salve from the other side.</p>
+              
+
+<script src="2022-07-26_tidytuesday flights_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Hello my friend. Passando para compartilhar uma breve curiosidade sobre os dados disponibilizados no tidytuesday. Semana retrasada (12/07) a base foi sobre transporte aéreo comercial, disponibilizado pela eurostat. A base contém dados de chegada e partida de aeronaves desde 2016, contendo os registros feitos por duas fontes : <em>Network Manager</em> e <em>Aiport Operator</em>.</p>
+<p>A primeira curiosidade foi identificar inconsistências entre as duas fontes.
+<img src="/blog2021/english/post/2022-07-26_tidytuesday%20flights_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Em seguida, o objetivo foi entender como o impacto da pandemia vem reverberando nas viagens europeias.</p>
+<pre><code>## `summarise()` has grouped output by &#39;YEAR&#39;, &#39;MONTH_NUM&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="/blog2021/english/post/2022-07-26_tidytuesday%20flights_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Em comparação com o mesmo mês do ano anterior, é possível observar que o primeiro trimestre de 2021 demonstra o aumento mais expressivo, o que faz sentido visto que <a href="https://www.cnnbrasil.com.br/saude/quais-os-paises-que-ja-comecaram-a-vacinacao-contra-a-covid-19/">vários países da Europa começaram a primeira onda de vacinações no fim de 2020</a>. com as variantes, novas ondas de contagio e novas doses de vacinação, que ocorreram ao longo de 2021, vemos que a “régua abaixa”.</p>
+<p>Por fim, já que os dados são razoavelmente recentes, vão até maio deste ano, resolvi checar por país a variação de voos em comparação ao mês anterior e foi no mínimo curioso.</p>
+<pre><code>## `summarise()` has grouped output by &#39;STATE_NAME&#39;, &#39;MONTH_NUM&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="/blog2021/english/post/2022-07-26_tidytuesday%20flights_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Ucrânia e Israel com grande aumento de movimentação. A guerra contra a Russia foi a primeira coisa que me veio a mente como justificativa de aeroportos tão agitados, achei este um motivo fair enough e resolvi pesquisar um pouco sobre Israel.</p>
+<p>Descobri que desde de janeiro o país está trabalhando para diminuir restrições. A primeira ação foi <a href="https://www.cnnbrasil.com.br/internacional/israel-reduz-restricao-a-viajantes-mesmo-com-aumento-de-casos-da-omicron/">Admitir estrangeiros provavelmente imunes</a>. <a href="https://www.travel3.com.br/acontece-no-turismo/turismo-de-israel/">Em maio deixaram de pedir PCR</a>, porém foi só no fim do mês então dificilmente teve impacto nesse gráfico. Pesquisando um pouco mais encontrei informações sobre a força do turismo religioso em Israel e como as cidades lotam nos feriados religiosos. Alguns deles acontecem segundo o calendário judaico e o dia da independência deles foi o evento que encontrei relacionado ao fim de abril e inicio de maio. Ainda assim, uma investigação maior seria interessante, visto que o calendário judaico tem mais variações que o nosso. <a href="https://pt.wikipedia.org/wiki/Calend%C3%A1rio_judaico">Vide a boa e velha wikipedia</a>.</p>
+<p>Isso é tudo, apenas uma passada rápida para falar que quem é vivo sempre aparece e que o final dos meus 50 centavos sobre o andar do bêbado estão vindo aí.</p>
+<p>Salut.</p>
 </div>
         <div class="post-footer">
             <div class="info">
-                
-                
+                <span class="separator"><a class="category" href="/blog2021/categories/r/">R</a></span>
+                <span class="separator"><a class="tag" href="/blog2021/tags/r/">R</a><a class="tag" href="/blog2021/tags/estat%C3%ADstica/">Estatística</a><a class="tag" href="/blog2021/tags/comunidade/">comunidade</a></span>
             </div>
         </div>
 
-        
+        <div id="fb_comments_container">
+                    <h2>comments</h2>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "annymuliterno" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
     </div>
 
 
