@@ -96,7 +96,7 @@ flights %>%
 
 ```
 
-Ucrânia e Israel com grande aumento de movimentação. A guerra contra a Russia foi a primeira coisa que me veio a mente como justificativa de aeroportos tão agitados, achei este um motivo fair enough e resolvi pesquisar um pouco sobre Israel.
+Ucrânia e Israel com grande aumento de movimentação. A guerra na Ucrânia foi a primeira coisa que me veio a mente como justificativa de aeroportos tão agitados, achei este um motivo fair enough e resolvi pesquisar um pouco sobre Israel.
 
 Descobri que desde de janeiro o país está trabalhando para diminuir restrições. A primeira ação foi [Admitir estrangeiros provavelmente imunes](https://www.cnnbrasil.com.br/internacional/israel-reduz-restricao-a-viajantes-mesmo-com-aumento-de-casos-da-omicron/). [Em maio deixaram de pedir PCR](https://www.travel3.com.br/acontece-no-turismo/turismo-de-israel/), porém foi só no fim do mês então dificilmente teve impacto nesse gráfico. Pesquisando um pouco mais encontrei informações sobre a força do turismo religioso em Israel e como as cidades lotam nos feriados religiosos. Alguns deles acontecem segundo o calendário judaico e o dia da independência deles foi o evento que encontrei relacionado ao fim de abril e inicio de maio. Ainda assim, uma investigação maior seria interessante, visto que o calendário judaico tem mais variações que o nosso. [Vide a boa e velha wikipedia](https://pt.wikipedia.org/wiki/Calend%C3%A1rio_judaico). 
 
