@@ -44,7 +44,9 @@ Por incrível que pareça, mesmo com Londres apresentando tantos pedintes, pouca
 Já o camarada William Petty, trouxe considerações importantes sobre a relação Estado x População. De acordo com os seus pensamentos, a grandiosidade de uma população tinha tudo a ver com a qualidade do governo. Se você, leitor, já possui um conhecimento básico em estatística e geografia, saberá que os países mais desenvolvidos apostaram em diminuir as taxas de natalidade durante algum momento da história. 
 Voltando a mencionar Graunt, vemos que o surgimento da chamada “tábua da vida”, é totalmente responsabilizado pelos estudos do próprio, que buscou uma forma mais organizada para acrescentar os dados que conseguia coletar. Certamente, ao longo de sua vida, você já deu de cara com alguma tabela dessas, caracterizada pelo seguinte formato demonstrativo:
 
-![mort_inf](https://raw.githubusercontent.com/IanniMuliterno/blog2021/master/docs/images/mort_inf.PNG)
+<p align="center">
+![Mortalidade Infantil](https://raw.githubusercontent.com/IanniMuliterno/blog2021/master/docs/images/mort_inf.PNG)
+</p>
 
 Nomes como Laplace e Quételet também carregam uma grande importância. O primeiro, foi o pioneiro de uma matemática conhecida como “probabilidade”. O segundo, traçou sua história com a astronomia e, logo depois, com a probabilidade e a estatística. Quételet ainda estudou assassinatos, incrementando a distribuição normal :
 
