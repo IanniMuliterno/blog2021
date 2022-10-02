@@ -1,0 +1,104 @@
+---
+title: "Resumo de livro - O andar do bêbado (pt 5)"
+author: "Ianní Muliterno"
+date: 2022-10-02
+categories: ["R"]
+tags: ["R","Estatística","comunidade"]
+
+---  
+```{r, include=FALSE, echo = FALSE}
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+#https://cran.r-project.org/web/packages/gghighlight/vignettes/gghighlight.html
+library(gghighlight)
+
+
+flights <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-07-12/flights.csv')
+
+```
+
+Para fechar com chave de ouro e fazer, da melhor forma, jus à grande obra de Leonardo Mlodinow, o último trio de capítulos chega a galope. 
+
+O capítulo 8, focado em nos mostrar como um grupo de pessoas pode repetir determinados padrões durante o cotidiano, faz com que levantemos o seguinte questionamento: “Será que tudo realmente é previsível?” A resposta para essa pergunta, sem sombra de dúvidas, é não! 
+
+Embora Leonard nos mostre que quando os dados são coletados, analisados e estudados, surgem padrões regulares, ele também faz questão de destacar que a vida é imprevisível e, talvez é justamente desse pensamento, que surge a inspiração para o nome do capítulo 8, “A ordem no caos”. Com exemplos claros e compreensíveis, podemos entender um pouco mais sobre como a aleatoriedade funciona e, principalmente, que ela não está tão ligada assim à desordem, como muitas pessoas tendem a associar. 
+
+Um desses exemplos é uma análise realizada nos Estados Unidos, pela Federal Highway Administration, que concluiu que existiam 200 milhões de motoristas ativos no país, sendo que em um determinado ano, os motoristas dirigiram juntos, o total de 4,60 trilhões de quilômetros (cerca de 23 mil km por motorista). Através de uma suposição, pense que esses motoristas alimentavam o desejo de dirigirem a mesma quantidade de quilômetros no ano seguinte e, para isso, o governo precisava pensar em duas hipóteses. 
+
+
+* Hipótese 1: Introduzir um sistema de racionamento, onde cada motorista tinha que cumprir uma cota. 
+
+* Hipótese 2: Sem cota, sem meta e sem criação de sistema algum, os motoristas poderiam dirigir o quanto quisessem, sem foco nos números. 
+
+Qual destas opções seria a mais assertiva, na sua opinião, jovem leitor? Por incrível que pareça, a opção de número 2 foi colocada em prática e o resultado foi o melhor possível: 4,63 trilhões de quilômetros rodados (cerca de 23.150 km por motorista, ou seja, o retorno a média).Esse exemplo mostra que a aleatoriedade pode atuar de maneira totalmente "ordenada".
+Além dos exemplo de retorno a média, neste capítulo em específico, também somos apresentados a pontos fora da curva, ou outliers. Nesse ponto questões envolvendo a expectativa de vida das pessoas aparecem. A estatística, profundamente ligada a esses estudos sociais, mostra que análises elaboradas com seriedade podem ajudar muito na compreensão da estimativa de vida de cada grupo humano, embora existam pessoas que adoram contrariar esses estudos, como é o caso da senhora Jeanne Calment, citada no início do capítulo como uma idosa que já deveria ter “batido as botas” há muito tempo, de acordo com a expectativa de vida francesa.
+
+Ao sermos apresentados a John Graunt e William Petty, duas figuras importantes e que foram inclusive, considerados os fundadores da estatística, percebemos que mesmo a tanto tempo atrás, com uma sociedade totalmente distinta e até mesmo ignorante, aconteciam avanços revolucionários que mudaram a forma de se pensar. 
+Durante muito tempo, a sociedade medieval explicava todas as mortes que ocorriam como uma “vontade divina”, ou seja, mesmo que você fosse jogado propositalmente sobre um carro que estivesse em alta velocidade e viesse a falecer, certamente isso teria sido obra de Deus, o todo poderoso e digno de amor. Porém, com o passar do tempo, esses conceitos apresentaram algumas mudanças, de tal forma que as pessoas já se permitiam questionar a causa das mortes com mais racionalidade.
+
+Juntamente com essa pequena evolução, as primeiras listas de mortalidade começaram a circular em Londres, com o objetivo de contabilizar a quantidade de batismos e enterros nas paróquias. É nesse momento, através dos dados fornecidos nessas listas, que Graunt começa a observar o número de pessoas que morriam por fome, febre maculosa, vermes e peste. 
+
+Por incrível que pareça, mesmo com Londres apresentando tantos pedintes, poucas pessoas morriam por causa da fome. Sendo assim, Graunt chegou a conclusão que os pedinchos dos pedintes tinham muita eficiência, pois pelo o que parecia, estavam sendo alimentados. Além disso, ele observou que as mortes pela peste estavam tendo saltos terríveis, e se esses aumentos estavam acontecendo com tanta frequência, certamente era porque a doença passava pelo ar, se alastrando mais rápido do que se fosse passada de pessoa para pessoa, como dizia uma teoria anterior. 
+
+Já o camarada William Petty, trouxe considerações importantes sobre a relação Estado x População. De acordo com os seus pensamentos, a grandiosidade de uma população tinha tudo a ver com a qualidade do governo. Se você, leitor, já possui um conhecimento básico em estatística e geografia, saberá que os países mais desenvolvidos apostaram em diminuir as taxas de natalidade durante algum momento da história. 
+Voltando a mencionar Graunt, vemos que o surgimento da chamada “tábua da vida”, é totalmente responsabilizado pelos estudos do próprio, que buscou uma forma mais organizada para acrescentar os dados que conseguia coletar. Certamente, ao longo de sua vida, você já deu de cara com alguma tabela dessas, caracterizada pelo seguinte formato demonstrativo:
+
+![mort_inf](https://raw.githubusercontent.com/IanniMuliterno/iannimuliterno.github.io/master/img/mort_inf.PNG)
+
+Nomes como Laplace e Quételet também carregam uma grande importância. O primeiro, foi o pioneiro de uma matemática conhecida como “probabilidade”. O segundo, traçou sua história com a astronomia e, logo depois, com a probabilidade e a estatística. Quételet ainda estudou assassinatos, incrementando a distribuição normal :
+
+ $$
+ Z = \frac{x - \mu}{\sigma} 
+ $$
+ 
+  Onde $Z$ representa a normal padrão, onde a variável $x$ é deslocada pelo parâmetro $\mu$ e tem sua escala redefinida pelo desvio padrão $\sigma$. Transformando-se então numa normal de média $0$ e desvio padrão $1$.
+  
+  O cálculo da distribuição normal, tão empregado por Quételet, permitiu a descoberta de desvios errôneos. Foi através dessa ideia, que ele começou a esclarecer a natureza das pessoas e da sociedade. 
+  
+ Com a distribuição normal, Quételet chegou a conclusão de que somos cópias de um mesmo protótipo, pois se fizermos mil cópias de uma mesma estátua, essas cópias conterão variações devido a erros de construção e medição, e da mesma forma acontece com nós humanos, onde a variação está presente nas nossas características físicas, dando destaque para a chamada “Lei dos Erros”. 
+ 
+ Embora muito utilizada na época, precisamos pensar que nem tudo estava associado à distribuição normal, por exemplo, se os rendimentos da indústria cinematográfica seguissem a distribuição normal, a maioria dos filmes renderia algo próximo de um valor médio, e 2 /3 de todos os rendimentos se afastariam desse número por no máximo um desvio padrão. No entanto, o que se observa é que 20% dos filmes geram 80% dos rendimentos. 
+ 
+ No capítulo 9, Leonardo Mlodinow nos entrega a noção de “ilusão de padrões”, mostrando que, em muitas das vezes, a inquietação aleatória faz com que acreditemos em padrões inexistentes. Sim, primeiro entendemos que pode haver ordem no caos, depois somos lembrados da facilidade com a qual encontramos falsos padrões.
+ Utilizando como exemplo uma tendência implementada nos Estados Unidos, o autor traz à tona uma questão significativa: Jovens que se juntavam ao redor de uma mesa com o objetivo de invocar uma entidade. O que mais chama a atenção nessa história, é que quando a mesa começava a se mexer sozinha, as pessoas em volta acreditavam que era um sinal dado pela entidade. 
+ 
+ Graças a um aparelho desenvolvido por Michael Faraday, foi possível saber que, na verdade, não era uma entidade que estava atuando sobre aquela mesa, mas sim os próprios jovens que, mesmo sem consciência, colocavam uma certa força que fazia com que a mesa se mexesse. 
+ 
+ A nossa imaginação, na mesma proporção que ajuda, também pode atrapalhar completamente. Utilizamos dela quando precisamos preencher lacunas de uma determinada história ou informação recebida no dia a dia. Quando recebemos uma informação incompleta, começamos a imaginar até torná-la completa. Por exemplo, se você nunca encontrou a pessoa X na vida, mas uma outra pessoa menciona que a pessoa X tem olhos azuis, você logo associa que ela também deve ter cabelos loiros. Mas quem afirmou isto? Essa é uma tarefa para Mendel, o pai da genética. 
+ 
+Neste capítulo, vemos que Fisher, um dos maiores estatísticos do século XX, desenvolveu o teste da significância para saber o que deveria ser relevado e, consequentemente, o que deveria ser descartado quando o assunto era probabilidade. Trata-se de um procedimento formal para calcular a probabilidade de observarmos o que observamos se a hipótese que estamos testando for verdadeira. Se a probabilidade for baixa, rejeitamos a hipótese. Se for alta, podemos aceitá-la. 
+
+ Se apostamos em um determinado resultado e este resultado de fato aparece, logo o nosso feito é associado a um poder psíquico, ou talvez até sobrenatural. Se apostamos em um resultado e este resultado aparece, mas não em sua totalidade, como se fosse apenas 1/2, talvez o nosso feito seja considerado um mero chute. Mas se apostamos e o resultado não aparece em nenhum momento, o nosso feito não passa de uma perda de tempo sem utilidade.
+ O teste criado por Fisher, auxilia a valorizar o que deve ser valorizado. E, da mesma forma, descartar o que não tem muita relevância. Ao fazermos uma análise mais apurada, vemos que muitos dos pressupostos da sociedade moderna se baseiam, como no caso do movimento da mesa, em ilusões coletivas. 
+ 
+ Naquela famosa e simples brincadeira do “cara ou coroa”, jogada para passar o tempo, podemos observar padrões que surgem do acaso e não desempenham um papel de padrão significante. Você pode até achar que tirar três vezes coroa significa alguma coisa, mas a aleatoriedade certamente não está preocupada com isto. 
+ 
+Ao observarmos a sequência seguinte, constituída pelos números 2, 6, 10, 14, 18, 22... , em qual conclusão chegamos e qual significado podemos dar? 
+
+* Números inteiros; 
+
+* Números pares; 
+
+* Pulam de 4 em 4. 
+
+ Embora exista um padrão estabelecido bem visível, dar algum significado a isto é uma grande precipitação. Uma vez que uma alguém tem uma ideia da regra que forma essa sequência, ela tende a buscar mais evidências de que está certa, ao invés de testar algo que possa refutar a si mesma, como testar se sua regra pode gerar números ímpares por exemplo. Esta afirmação tem como fonte o livro "reasoning about a rule" do Wason. Os psicólogos chamam isso de "viés da confirmação". 
+ 
+Agora, caminhamos para o capítulo 10, aquele que, por sinal, entrega o encerramento da obra. Neste capítulo, conhecemos a teoria expressa por Laplace (é, novamente este cara), nomeada como “determinismo”.
+Essa teoria sugere a ideia de um mundo ordenado, onde o futuro não seria tão imprevisível assim. Poderíamos de alguma forma prever os acontecimentos futuros, calculando melhor cada ato e as suas consequências. Pense, caro leitor, o futuro seria tão certo como $2 + 2 = 4$, mas isso com certeza é teoria de conto de fadas… 
+
+É claro que se pararmos para pensar, o determinismo marca presença em algumas áreas do estudo até os dias de hoje, como por exemplo, na meteorologia, onde muitas análises garantem, não em sua totalidade, a certeza de que vai chover no final de semana ou vai dar o sol de ipanema. 
+
+Embora o determinismo sugira que para prever as consequências, é preciso estudar os comportamentos humanos e cada ato devidamente, na prática, nem tudo pode ser previsível. Infelizmente, não temos muitos exemplos na história, de épocas ruins que já haviam sido previstas, até porque se já haviam sido previstas, poderiam ter sido evitadas. 
+
+Nossa vida, nossos caminhos tomados, não são como a quebra da bolsa de valores de New York, que aconteceu quando os investidores de ações, começaram a colocá-las a venda para evitar o próprio prejuízo financeiro já previsto. Fontes dizem que 12 milhões de ações foram colocadas à venda, os investidores faziam um movimento ordenado, abalando de vez a economia norte-americana.
+
+Outro exemplo claro do que Laplace considerava determinismo, é o que os profissionais de marketing fazem diariamente: analisam, buscam e estudam os seus possíveis alvos, a fim de levar produtos atrativos de acordo com a preferência de cada um. 
+
+Ao sermos apresentados ao arquétipo do “andar do bêbado”, nome dado ao capítulo 10 e também ao livro, percebemos que, na verdade, este arquétipo tem tudo tem a ver com a vida. Somos empurrados o tempo todo a uma direção, e depois a outra. O que nos empurra? São os eventos aleatórios, sem rumos, mas ainda assim, em alguma direção.
+
+Com uma linguagem compreensível e assuntos reflexivos, a obra nos faz pensar um pouco fora da caixa e, talvez, o que mais precisamos é estar fora da caixa por mais tempo.
+
+Agora fiquem com este quote retirado do último capítulo, pois preciso me despedir por aqui, e isto é um até breve!
+
+*“Em vez de confiarmos em nossa capacidade de prever os acontecimentos futuros, podemos nos concentrar na capacidade de reagir a eles, por meio de qualidades como flexibilidade, confiança, coragem e perseverança.”*
